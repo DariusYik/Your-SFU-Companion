@@ -13,3 +13,69 @@
  *= require_tree .
  *= require_self
  */
+ 
+ .container {
+  padding: 0;
+  width: 100%;
+}
+
+.header {
+  margin: 0;
+  padding: 0;
+}
+
+.header li {
+ display: inline;
+ margin-left: 30px;
+} 
+ 
+ .pull-right {
+  position: relative;
+  margin: 20px 20px 0 0;
+}
+
+
+.form {
+  text-align:center;
+  margin: 0 auto 10px;
+  padding: 20px 0 10px 0;
+  font-size: 16px;
+  width: 300px;
+}
+
+input[type=text],
+input[type=email],
+input[type=password] {
+  color: #666666;
+  width: 100%;
+  border: 1px solid #E6E6E6;
+  border-radius: 0px; 
+  height: 60px;
+  margin: 6px auto;
+  text-indent: 10px;
+}
+
+.pull-right ul {
+    margin: 0;
+    -webkit-margin-after: 0;
+    -webkit-margin-before: 0;
+    -webkit-padding-start: 0;
+  }
+
+  .pull-right ul li {
+    display: block;
+    float: left;
+    margin: 0;
+    padding: 20px 0;
+    text-align: center;
+    width: 50%;
+  }
+
+  .pull-right ul li a {
+    display: block;
+    width: 100%;
+  }
+
+  .img-container {
+    height: 200px;
+  }
