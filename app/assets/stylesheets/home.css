@@ -43,5 +43,15 @@ img{
 .fade:hover{
 	opacity: 0.5;
 }
-}
+
+.logoutbutton{
+	color:white;
+	border-radius: 4px;
+	text-decoration: none;
+	border: 1px solid white;
+	padding: 7px 9px 7px 9px;
+	position: absolute;
+	top:20px;
+	right:15px;
+
 }
