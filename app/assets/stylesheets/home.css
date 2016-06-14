@@ -1,3 +1,33 @@
 body{
-	background-color: black;
+	background-color: white;
+	background: url('/assets/background.png');
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-position: center;
+}
+
+#Welcome{
+	font-weight: normal;
+	margin-left: 20px;
+	margin-top: 20px;
+	color: white;
+	font-size: 60px;
+}
+
+#Modules{
+
+	width: 925px;
+	height:300px;
+	top:0;
+	bottom:0;
+	left:0;
+	right:0;
+	position:absolute;
+
+	margin: auto;
+}
+
+img{
+	height: 300px;
+	width: 270px;
 }
