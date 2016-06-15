@@ -1,9 +1,10 @@
 body{
 	background-color: #6a9afb;
-	/*background: url('/assets/background.png');*/
+	background: url('/assets/background.png');
 	background-repeat: no-repeat;
 	background-attachment: fixed;
 	background-position: center;
+	background-size: cover;
 }
 
 #Welcome{
