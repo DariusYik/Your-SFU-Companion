@@ -11,6 +11,8 @@
 	text-align: center;
 	margin-top: 25px;
 	color: white;
+	text-shadow: 1px 1px 2px #000000;
+
 }
 
 body{
@@ -20,4 +22,53 @@ body{
 	background-attachment: fixed;
 	background-position: center;
 	background-size: cover;
+}
+
+#Login_btn{
+background-color: #5189fb;
+color:white;
+padding:20px 101px;
+text-align: center;
+text-decoration: none;
+font-size: 30px;
+display: inline-block;
+border-radius: 6px;
+margin: 2px 2px 2px 2px;
+
+}
+
+h4{
+	color:white;
+	font-weight: normal;
+	font-size: 35px;
+	text-align: center;
+}
+
+#Login_btn:hover {
+	background-color:#3377ff;
+}
+
+#Signup_btn:hover{
+	background-color:#3377ff; 
+}
+#Signup_btn{
+	background-color: #5189fb;
+color:white;
+padding:20px 95px;
+text-align: center;
+text-decoration: none;
+font-size: 30px;
+border-radius: 6px;
+display: inline-block;
+margin: 2px 2px 2px 2px;
+
+}
+
+.Login{
+border: 1px solid white;
+border-radius: 6px;
+padding: 40px 40px;
+position: fixed;
+top: 400px;
+left: 230px;
 }
