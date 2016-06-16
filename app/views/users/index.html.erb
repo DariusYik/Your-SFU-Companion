@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html>
 
 <head>
@@ -10,9 +11,16 @@
 	<hr id="gradient">
 	
 	<div class = "Login">
+		
+		 <% if current_user %> 
+    		<h4><%= current_user.email %></h4><br>
+    		<%= link_to "Logout", logout_path, id:"Logout_btn", method: "delete" %> 
+		
+		<% else %> 
 		<h4>Get started</h4>
 		<%= link_to "Login", 'login', id: "Login_btn" %><br>
 		<%= link_to "Signup", 'signup', id: "Signup_btn" %>
+		<% end %> 
 	</div>
 
 	<div class= "guest">

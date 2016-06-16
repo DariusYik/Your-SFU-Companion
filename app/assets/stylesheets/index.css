@@ -81,12 +81,25 @@ margin: 2px 2px 2px 2px;
 
 }
 
+#Logout_btn{
+background-color: #5189fb;
+color:white;
+padding:20px 95px;
+text-align: center;
+text-decoration: none;
+font-size: 30px;
+border-radius: 6px;
+display: inline-block;
+margin: 2px 2px 2px 2px;
+}
+
+
 .guest{
 	
 	width:900px;
-	position: fixed;
-	top: 350px;
-	right:175px;
+	position: static;
+	margin-left: 750px;
+	margin-top: 250px;
 	border-left: 1px solid white;
 }
 
@@ -99,6 +112,7 @@ border-radius: 6px;
 padding: 40px 40px;
 position: absolute;
 top: 400px;
-left: 230px;
+left: 10%;
+right: auto;
 
 }
