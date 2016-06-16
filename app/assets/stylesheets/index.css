@@ -84,11 +84,14 @@ margin: 2px 2px 2px 2px;
 .guest{
 	
 	width:900px;
-	position: absolute;
+	position: fixed;
 	top: 350px;
 	right:175px;
 	border-left: 1px solid white;
 }
+
+
+
 
 .Login{
 border: 1px solid white;
