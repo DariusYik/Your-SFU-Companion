@@ -6,8 +6,13 @@
 </head>
 
 <body>
-	<h1 id ="Welcome">Welcome</h1> Page hasnt been finsihed yet... Positioning has to be fixed
-	<a class = "logoutbutton"> Logout </a>
+	<h1 id ="Welcome">Welcome</h1>
+
+	<% if current_user %> 
+    	<%= current_user.email %><br>
+    	<%= link_to "Logout", logout_path, class: "logoutbutton", method: "delete" %> 
+    <% end %>	
+    Page still needs layout fixes and more work to be done
 	<div id="Modules">
 		<img src="/assets/courses.png" class = "fade"><img src="/assets/library.png" class = "fade"><img src="/assets/maps.png" class = "fade">
 		<img src="/assets/social.png" class = "fade"><img src="/assets/calendar.png" class = "fade"><img src="/assets/transit.png" class = "fade">
