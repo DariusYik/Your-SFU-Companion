@@ -9,10 +9,18 @@
 	<h1 id="SFUCompanion">SFU Companion</h1>
 	<hr id="gradient">
 
+	
 	<div class = "Login">
+		
+		 <% if current_user %> 
+    		<%= current_user.email %><br>
+    		<%= link_to "Logout", logout_path, id:"Logout_btn", method: "delete" %> 
+		
+		<% else %> 
 		<h4>Get started</h4>
 		<%= link_to "Login", 'login', id: "Login_btn" %><br>
 		<%= link_to "Signup", 'signup', id: "Signup_btn" %>
+		<% end %> 
 	</div>
 
 	<div class= "guest">
