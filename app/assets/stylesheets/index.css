@@ -94,19 +94,19 @@ margin: 2px 2px 2px 2px;
 }
 
 
-.guest{
+/*.guest{
 	
-	width:900px;
+/*	width:900px;
 	position: static;
 	margin-left: 750px;
 	margin-top: 250px;
 	border-left: 1px solid white;
 }
+*/
 
 
 
-
-.Login{
+/*.Login{
 border: 1px solid white;
 border-radius: 6px;
 padding: 40px 40px;
@@ -115,4 +115,17 @@ top: 400px;
 left: 10%;
 right: auto;
 
+}*/
+
+
+.body{
+	display: table;
+}
+.right-side{
+	float: none;
+	display: table-cell;
+}
+.left-side{
+	float: none;
+	display: table-cell;
 }

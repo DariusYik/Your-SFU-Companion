@@ -1,29 +1,48 @@
-<!DOCTYPE html>
-<html>
+<!-- <!DOCTYPE html>
+<html>-->
 
-<head>
+<head> 
 <title>SFU Companion</title>
 <%= stylesheet_link_tag('index', :media=>'all')%>
 </head>
 
-<body>
-	<h1 id="SFUCompanion">SFU Companion</h1>
-	<hr id="gradient">
-	
-	<div class = "Login">
-		
-		<h4>Get started</h4>
-		<%= link_to "Login", 'login', id: "Login_btn" %><br>
-		<%= link_to "Signup", 'signup', id: "Signup_btn" %>
-	
+<!-- <body> -->
+<div class="container">
+		<h1 id="SFUCompanion">SFU Companion</h1>
+		<hr id="gradient">
+	<div class="row">
+		<div class="col-md-2 left-side">
+			<div class="nav pull-right">
+				<div class = "Login">
+					
+					<% if current_user %> 
+			              <ul> 
+			                <li><%= current_user.email %></li> 
+			                <li><%= link_to "Log out", logout_path, method: "delete" %></li> 
+			              </ul> 
+			          <% else %> 
+			            <ul> 
+			              	<h4>Get started</h4>
+							<%= link_to "Login", 'login', id: "Login_btn" %><br>
+							<%= link_to "Signup", 'signup', id: "Signup_btn" %>
+			            </ul> 
+			          <% end %>  
+				
+				</div>
+			</div>
+		</div>
+
+		<div class="col-md-10 right-side">
+			
+				<h4>Guest Modules </h4> <br>
+				<img src="/assets/courses.png" class = "fade"><img src="/assets/library.png" class = "fade"><img src="/assets/maps.png" class = "fade">
+			
+		</div>
 	</div>
-
-	<div class= "guest">
-		<h4>Guest Modules </h4> <br>
-		<img src="/assets/courses.png" class = "fade"><img src="/assets/library.png" class = "fade"><img src="/assets/maps.png" class = "fade">
-	</div>
-
-</body>
+</div>
 
 
-</html>
+<!-- </body>
+ -->
+
+<!-- </html> -->
