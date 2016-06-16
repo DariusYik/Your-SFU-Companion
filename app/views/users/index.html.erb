@@ -4,14 +4,15 @@
 <head> 
 <title>SFU Companion</title>
 <%= stylesheet_link_tag('index', :media=>'all')%>
+<meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 
 <!-- <body> -->
-<div class="container">
+<div class="container-fluid">
 		<h1 id="SFUCompanion">SFU Companion</h1>
 		<hr id="gradient">
 	<div class="row">
-		<div class="col-md-2 left-side">
+		<div class="col-md-5  left-side">
 			<div class="nav pull-right">
 				<div class = "Login">
 					
@@ -22,7 +23,7 @@
 			              </ul> 
 			          <% else %> 
 			            <ul> 
-			              	<h4>Get started</h4>
+			              	<h4> Get started </h4><br><br><br><br>
 							<%= link_to "Login", 'login', id: "Login_btn" %><br>
 							<%= link_to "Signup", 'signup', id: "Signup_btn" %>
 			            </ul> 
@@ -32,9 +33,9 @@
 			</div>
 		</div>
 
-		<div class="col-md-10 right-side">
+		<div class="col-md-7  right-side">
 			
-				<h4>Guest Modules </h4> <br>
+				<h4> Guest Modules </h4>
 				<img src="/assets/courses.png" class = "fade"><img src="/assets/library.png" class = "fade"><img src="/assets/maps.png" class = "fade">
 			
 		</div>

@@ -122,10 +122,12 @@ right: auto;
 	display: table;
 }
 .right-side{
-	float: none;
+	float: right;
+	margin-right: 8%;
 	display: table-cell;
 }
 .left-side{
-	float: none;
+	float: left;
+	margin-left: 8%;
 	display: table-cell;
 }
