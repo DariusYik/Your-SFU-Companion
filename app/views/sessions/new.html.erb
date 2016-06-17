@@ -1,15 +1,21 @@
-<div class="login">
-	<div class="container">
-		<div class="form">
+<!DOCTYPE html>
+<html>
+<head><title>Login</title>
+	<%= stylesheet_link_tag('login', :media=>'all')%>
+</head>
 
-      <h1>Log in</h1>
+<body>
+
+	<div class="form" id="id1">
+
+      <img src="/assets/user.png">
 		<%= form_for(:session, url: login_path) do |f| %> 
- 	 		<%= f.email_field :email, :placeholder => "Email" %> 
-  			<%= f.password_field :password, :placeholder => "Password" %> 
-  			<%= f.submit "Log in", class: "btn-submit" %>
+ 	 		<%= f.email_field :email, :placeholder => "Email", id: "email_field" %><br>
+  			<%= f.password_field :password, :placeholder => "Password", id:"Password_field" %><br>
+  			<%= f.submit "Log in", class: "btn-submit", id: "Login_btn" %>
 		<% end %>
 
 		
     </div>
-	</div>
-</div>
+</body>
+</html>
