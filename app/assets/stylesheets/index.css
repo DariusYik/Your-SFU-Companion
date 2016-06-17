@@ -137,7 +137,7 @@ border: 1px solid white;
 border-radius: 6px;
 padding: 30px 30px;
 position: absolute;
-top: 400px;
+top: 300px;
 left: 5%;
 right: auto;
 
@@ -181,7 +181,7 @@ h4{
 	width:auto;
 	position: static;
 	margin-left: 450px;
-	margin-top: 250px;
+	margin-top: 150px;
 	border-left: 1px solid white;
 }
 
