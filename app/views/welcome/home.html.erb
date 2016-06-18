@@ -11,7 +11,9 @@
 	<% if current_user %>
     	<%= current_user.email %><br>
     	<%= link_to "Logout", logout_path, class: "logoutbutton", method: "delete" %>
+		<% if current_user.email == "admin@email.com" %>	
 			<%= link_to "Settings", 'admin', class: "adminbutton" %>
+		<% end %>	
     <% end %>
     Page still needs layout fixes and more work to be done
 	<div id="Modules">

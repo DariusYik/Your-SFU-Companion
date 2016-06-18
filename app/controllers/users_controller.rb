@@ -2,6 +2,8 @@ class UsersController < ApplicationController
 
   layout false
 
+  before_action :require_user, :require_admin, only: [:admin]
+  
   def new
     @user = User.new
   end

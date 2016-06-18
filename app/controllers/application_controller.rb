@@ -12,6 +12,10 @@ class ApplicationController < ActionController::Base
     redirect_to '/login' unless current_user 
   end
   
+  def require_admin
+    redirect_to '/' unless current_user.email == "admin@email.com"
+  end
+  
   #############
   # before_action :require_user, only: [:index, :show]
   #add the above line in whatever controller that needs user login to be accessed.
