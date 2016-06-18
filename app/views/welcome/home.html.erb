@@ -8,10 +8,11 @@
 <body>
 	<h1 id ="Welcome">Welcome</h1>
 
-	<% if current_user %> 
+	<% if current_user %>
     	<%= current_user.email %><br>
-    	<%= link_to "Logout", logout_path, class: "logoutbutton", method: "delete" %> 
-    <% end %>	
+    	<%= link_to "Logout", logout_path, class: "logoutbutton", method: "delete" %>
+			<%= link_to "Settings", 'admin', class: "adminbutton" %>
+    <% end %>
     Page still needs layout fixes and more work to be done
 	<div id="Modules">
 		<img src="/assets/courses.png" class = "fade"><img src="/assets/library.png" class = "fade"><img src="/assets/maps.png" class = "fade">
