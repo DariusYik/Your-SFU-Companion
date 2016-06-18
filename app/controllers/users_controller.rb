@@ -3,6 +3,7 @@ class UsersController < ApplicationController
   layout false
 
   before_action :require_user, :require_admin, only: [:admin]
+  before_action :require_no_login, only: [:index]
   
   def new
     @user = User.new
