@@ -11,9 +11,9 @@
 
 				<div class="shoutout_header">
 				<%= link_to "Shoutouts", '/messages', class: "shoutouts" %>
-				<div class="create_message">
-				<%= link_to "+", new_message_path %>
-			</div>
+				<%= link_to "Create", new_message_path, class: "create", id: "btn" %>
+				<%= link_to "Home", root_path, class: "home" %>
+
 				</div>
 		
 	
@@ -22,6 +22,8 @@
 
 	
 <%= yield %>
+
+
 
 </body>
 </html>
