@@ -7,12 +7,29 @@ body{
 	background-size: cover;
 }
 
+#gradient {
+    border: 0;
+    height: 1px;
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
+ 	
+}
+
 #Welcome{
 	font-weight: normal;
 	margin-left: 20px;
 	margin-top: 20px;
 	color: white;
-	font-size: 60px;
+	font-size: 50px;
+
+}
+
+#user{
+	font-weight: 100px;
+	margin-left: 35px;
+	
+	color: #f2f2f2;
+	font-size: 40px;
+
 }
 
 #Modules{
