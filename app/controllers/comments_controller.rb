@@ -3,7 +3,6 @@ class CommentsController < ApplicationController
 	before_action :find_comment, only: [:edit, :update, :destroy]
 	layout 'shoutout'
 	def create
-		# creates a comment with respect to the message
 		@comment = @message.comments.create(comment_params)
 		@comment.user_id = current_user.id
 

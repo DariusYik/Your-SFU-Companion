@@ -8,21 +8,19 @@
 </head>
 <body>
 
-<nav class="navbar navbar-default">
-		<div class="container">
-			<div class="navbar-header">
-				<%= link_to "Shoutouts", '/messages', class: "navbar-brand" %>
-			</div>
-			
-				<p><%= link_to "Create message", new_message_path, class: "navbar-text navbar-link navbar-right" %></p>
-			
-		</div>
-	</nav>
 
+				<div class="shoutout_header">
+				<%= link_to "Shoutouts", '/messages', class: "shoutouts" %>
+				<div class="create_message">
+				<%= link_to "+", new_message_path %>
+			</div>
+				</div>
+		
+	
 	<p class="notice"><%= notice %></p>
 	<p class="alert"><%= alert %></p>
 
-	<div class="container">
+	
 <%= yield %>
 
 </body>
