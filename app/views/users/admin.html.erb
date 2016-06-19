@@ -1,28 +1,49 @@
-<h1>User Database</h1>
+<!DOCTYPE html>
+<html>
 
-<table>
-  <thead>
+
+<head>
+<title>Admin panel</title>
+<%= stylesheet_link_tag('admin', :media=>'all')%>
+</head>
+
+<body>
+
+<div class="mainhead">
+<br><br>
+<h1> User database</h1><br><br>
+</div>
+<br>
+
+
+<table id="indextable">
+  
     <tr>
       <th>First Name</th>
       <th>Last Name</th>
       <th>Email</th>
       <th colspan="2"></th>
     </tr>
-  </thead>
 
-  <tbody>
+  
     <% @user.each do |f| %>
       <tr>
         <td><%= f.first_name %></td>
         <td><%= f.last_name %></td>
         <td><%= f.email %></td>
         <td>Edit</td> <!--edit later-->
-        <td><%= link_to 'Delete', f, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Delete', f, method: :delete, data: { confirm: 'Are you sure?' }, class: "linkbtn" %></td>
       </tr>
     <% end %>
-  </tbody>
+
 </table>
 
 <br>
-<%= link_to "Home", 'welcome' %>
+<hr>
 <br>
+
+<%= link_to "Home", '/', class: "linkbtn1" %>
+<br>
+
+</body>
+</html>
