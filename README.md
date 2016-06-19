@@ -6,6 +6,8 @@ Providing SFU’s many resources organized by modules into one location with the
 ###Modules and Features:
 1. **Login Module:** When you first visit the webpage, there’ll be a welcome page giving a short description or slogan of the web app. There will be a log in or sign up button shown with the welcome page, but you can also choose to visit the website as a guest. Some features do not require a user account, such as viewing the map, searching through courses or library, etc while others do, such as adding friends, sharing to social media, etc.
 
+2. **Shoutouts Module** Registered users will be able to post messages that other users can view and reply to. Shoutouts are a way to convey/enquire relevant information regarding SFU's course works, academic schedules, dates, events and so on. Shoutouts can also be used to have converstaions or help find someone to study with etc.
+
 2. **Course Module:** Users will be able to add the classes that they are taking each semester. Using the SFU Course Information API, this will allow users to view course descriptions or outlines, exam date and times, and class schedules organized into a weekly schedule. Information about SFU’s academic programs will also be available to users through the SFU Academic Calendar API. We will also utilize Google Maps API to provide students with their class locations for both the Surrey and Burnaby Campus.
 
 3. **Library Module:** This feature will allow people who visit the web app to get information about the SFU library. Using the SFU library API, users will get info on library hours, book searches, equipment searches, and computer workstation availability searches.
