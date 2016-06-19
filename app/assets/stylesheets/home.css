@@ -17,14 +17,14 @@ body{
 
 #Modules{
 
-	width: 925px;
-	height:325px;
+	width: auto;
+	height:auto;
 	top:0;
 	bottom:0;
 	left:0;
 	right:0;
-	position:absolute;
-
+	position:static;
+	text-align: center;
 	margin: auto;
 }
 
@@ -54,6 +54,16 @@ img{
 	position: absolute;
 	top:20px;
 	right:15px;
+}
+#footer{
+	border-top: 1px solid white;
+	
+	color: white;
+	width: 100%;
+	position: fixed;
+	bottom: 3px;
+	text-align: center;
+
 }
 
 .adminbutton{
