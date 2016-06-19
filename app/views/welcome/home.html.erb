@@ -11,10 +11,11 @@
 	
 
 	<% if current_user %>
-    	<%= link_to "Logout", logout_path, class: "logoutbutton", method: "delete" %>
-		<% if current_user.email == "admin@email.com" %>	
+			<% if current_user.email == "admin@email.com" %>	
 			<%= link_to "Settings", 'admin', class: "adminbutton" %>
 		<% end %>	
+    	<%= link_to "Logout", logout_path, class: "logoutbutton", method: "delete" %>
+
     <% end %>
 	<div id="Modules">
 		<img src="/assets/shoutouts.png" class = "fade"><img src="/assets/courses.png" class = "fade"><img src="/assets/library.png" class = "fade"><img src="/assets/maps.png" class = "fade">
