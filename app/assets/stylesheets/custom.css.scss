@@ -1,12 +1,35 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+
+
 .new_message{
 	border-top:1px solid #999999;
 	padding: 10px 10px;
 	height: auto;
 }
 
+#editcomment{
+	text-align: center;
+}
+
+.edit_submit_btn{
+	display: inline-block;
+}
+
+.edit_comment{
+	border-top:1px solid #999999;
+	padding: 10px 10px;
+	height: auto;
+
+	width: 80%;
+	margin-right: auto;
+	margin-left:auto;
+}
+
+.comment_input{
+display: inline-block;
+}
 
 .title{
 	width: 30px;
