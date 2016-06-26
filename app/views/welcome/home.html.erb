@@ -15,9 +15,9 @@
 				<ul class="nav navbar-nav navbar-right">
 					<% if current_user %>
 						<% if current_user.email == "admin@email.com" %>	
-							<%= link_to "Settings", 'admin' ,class: "button" %>
+							<%= link_to "Settings",'admin',class: "adminbutton" %>
 						<% end %>	
-	    				<%= link_to "Logout", logout_path, class: "button", method: "delete" %>
+	    				<%= link_to "Logout", logout_path, class: "logoutbutton", method: "delete" %>
 	    			<% end %>
 	    		</ul>
 	    	</nav>
