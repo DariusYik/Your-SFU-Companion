@@ -2,30 +2,52 @@
 <html>
 <head>
 	<title>Home Page</title>
-	<%= stylesheet_link_tag('home', :media=>'all')%>
+	<%= stylesheet_link_tag'home', :media=>'all', 'data-turbolinks-track' => true %>
+	<%= javascript_include_tag 'home', 'data-turbolinks-track' => true %>
 </head>
 
 <body>
-	<h1 id ="Welcome">Welcome <%= current_user.first_name%></h1><hr id="gradient">
-	<h2 id="user"></h2>
-	
 
-	<% if current_user %>
-			<% if current_user.email == "admin@email.com" %>	
-			<%= link_to "Settings", 'admin', class: "adminbutton" %>
-		<% end %>	
-    	<%= link_to "Logout", logout_path, class: "logoutbutton", method: "delete" %>
 
-    <% end %>
-	<div id="Modules">
-		<a href='/messages'><img src="/assets/shoutouts.png" class = "fade"></a><img src="/assets/courses.png" class = "fade"><img src="/assets/library.png" class = "fade"><img src="/assets/maps.png" class = "fade">
-		<img src="/assets/social.png" class = "fade"><img src="/assets/calendar.png" class = "fade"><img src="/assets/transit.png" class = "fade">
+
+		<h1 id="Welcome">Welcome, <%= current_user.first_name%></h1>
+		<hr id="gradient">
+
+
+			<div class="btn-group">
+ 			 <button type="button" class="btn btn-primary btn-lg dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+ 			   Account <span class="caret"></span>
+ 			 </button>
+ 			 <ul class="dropdown-menu">
+ 			   <li><a href="#">Profile</a></li>
+ 			   		<% if current_user %>
+						<% if current_user.email == "admin@email.com" %>	
+ 			  				 <li><%= link_to "Admin Panel",'admin'%></li>
+ 			  				 <% end %>	
+					<% end %>
+ 			   <li role="separator" class="divider"></li>
+ 			   <li><%= link_to "Logout", logout_path, method: "delete" %></li>
+			  </ul>
+			</div>
+
+
+
+
+		<div id="Modules">
+		<a href='/messages'>
+			<img src="/assets/shoutouts.png" class = "fade">
+		</a>
+			<img src="/assets/courses.png" class = "fade">
+			<img src="/assets/library.png" class = "fade">
+			<img src="/assets/maps.png" class = "fade">
+			<img src="/assets/social.png" class = "fade">
+			<img src="/assets/calendar.png" class = "fade">
+			<img src="/assets/transit.png" class = "fade">
 	</div>
-	<div id="footer">
-	Logged in as 
-	<%= current_user.email %>
-</div>
 
+	<div id="footer">
+	Logged in as <%= current_user.email %>
+	</div>
 </body>
 
 </html>

@@ -1,3 +1,6 @@
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
 body{
 	background-color: #6a9afb;
 	background: url('/assets/background.png');
@@ -6,6 +9,8 @@ body{
 	background-position: center;
 	background-size: cover;
 }
+
+
 
 #gradient {
     border: 0;
@@ -16,11 +21,10 @@ body{
 
 #Welcome{
 	font-weight: normal;
-	margin-left: 20px;
+	margin-left: 2%;
 	margin-top: 20px;
 	color: white;
-	font-size: 50px;
-
+	font-size: 300%;
 }
 
 #user{
@@ -45,6 +49,35 @@ body{
 	margin: auto;
 }
 
+.navbar {
+	background:rgba(0,0,0,0.3);
+}
+
+.container p{
+	float: left;
+	margin-right: 10px;
+	font-size: 1.7em;
+	color: #fff;
+	/*text-transform: uppercase;*/
+	letter-spacing: -1px;
+	padding-top: 9px;
+	font-weight: bold;
+}
+
+.center {
+	text-align: center;
+	background:rgba(0,0,0,0.001);
+}
+
+
+.center h1 {
+	font-weight: normal;
+	margin-left: 5px;
+	margin-top: 20px;
+	color: white;
+	font-size: 300%;
+}
+
 img{
 	height: 310px;
 	width: 270px;
@@ -64,13 +97,15 @@ img{
 
 .logoutbutton{
 	color:white;
-	border-radius: 4px;
+	/*border-radius: 4px;*/
 	text-decoration: none;
-	border: 1px solid white;
-	padding: 7px 12px 7px 12px;
+	/*border: 1px solid white;*/
+	padding: 4px 10px 4px 10px;
+	text-transform: uppercase;
+	/*padding-top: 10px;*/
 	position: absolute;
-	top:20px;
-	right:15px;
+	top:11px;
+	right:19px;
 }
 #footer{
 	border-top: 1px solid white;
@@ -83,14 +118,21 @@ img{
 
 }
 
+.btn-group{
+		position:absolute;
+	right:50px;
+	top: 25px;
+}
+
 .adminbutton{
 	color:white;
 	background-color: #f5993d;
 	border-radius: 4px;
 	text-decoration: none;
 	border: 1px solid white;
-	padding: 7px 9px 7px 9px;
+	padding: 4px 8px 4px 8px;
 	position:absolute;
-	right:15px;
+	right:18px;
 	top: 60px;
+	text-transform: uppercase;
 }
