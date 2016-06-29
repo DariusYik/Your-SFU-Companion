@@ -1,5 +1,18 @@
 Rails.application.routes.draw do
 
+  # The priority is based upon order of creation: first created -> highest priority.
+  # See how all your routes lay out with "rake routes".
+
+  root 'users#index'
+
+  get 'maps' => 'maps#index'
+
+  get 'welcome' => 'welcome#home'
+
+  get '/signup'  => 'users#new'
+
+  get 'admin' => 'users#admin'
+  resources :users
 
   get 'maps/index'
 
@@ -9,18 +22,7 @@ Rails.application.routes.draw do
 
   get 'maps/edit'
 
-  # The priority is based upon order of creation: first created -> highest priority.
-  # See how all your routes lay out with "rake routes".
-
-  root 'users#index'
-
-  get 'welcome' => 'welcome#home'
-
-  get '/signup'  => 'users#new'
-
-  get 'admin' => 'users#admin'
-  resources :users
-
+  resources :maps
   get 'login' => 'sessions#new'
   post 'login' => 'sessions#create'
   get 'logout' => 'sessions#destroy'

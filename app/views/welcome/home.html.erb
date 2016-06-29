@@ -21,9 +21,9 @@
  			 <ul class="dropdown-menu">
  			   <li><a href="#">Profile</a></li>
  			   		<% if current_user %>
-						<% if current_user.email == "admin@email.com" %>	
+						<% if current_user.email == "admin@email.com" %>
  			  				 <li><%= link_to "Admin Panel",'admin'%></li>
- 			  				 <% end %>	
+ 			  				 <% end %>
 					<% end %>
  			   <li role="separator" class="divider"></li>
  			   <li><%= link_to "Logout", logout_path, method: "delete" %></li>
@@ -39,7 +39,9 @@
 		</a>
 			<img src="/assets/courses.png" class = "fade">
 			<img src="/assets/library.png" class = "fade">
+		<a href='/maps'>
 			<img src="/assets/maps.png" class = "fade">
+		</a>
 			<img src="/assets/social.png" class = "fade">
 			<img src="/assets/calendar.png" class = "fade">
 			<img src="/assets/transit.png" class = "fade">
