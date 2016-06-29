@@ -4,7 +4,7 @@ class UsersController < ApplicationController
 
   before_action :require_user, :require_admin, only: [:admin, :destroy]
   before_action :require_no_login, only: [:index]
-  
+
   def new
     @user = User.new
   end
@@ -28,12 +28,16 @@ class UsersController < ApplicationController
   end
 
   def edit
+    @user = User.all
   end
 
   def destroy
     @user=User.find(params[:id]).destroy
     flash[:success] = "User deleted"
     redirect_to '/admin'
+  end
+
+  def update
   end
 
 
