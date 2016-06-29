@@ -14,13 +14,9 @@ Rails.application.routes.draw do
   get 'admin' => 'users#admin'
   resources :users
 
-  get 'maps/index'
-
-  get 'maps/show'
-
-  get 'maps/new'
-
-  get 'maps/edit'
+  get 'maps/burnaby'
+  get 'maps/surrey'
+  get 'maps/vancouver'
 
   resources :maps
   get 'login' => 'sessions#new'
