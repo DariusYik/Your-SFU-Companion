@@ -17,6 +17,8 @@ gem 'coffee-rails', '~> 4.1.0'
 # gem 'therubyracer', platforms: :ruby
 gem 'simple_form', '~> 3.2', '>= 3.2.1'
 
+# For Google Maps API
+gem 'gmaps4rails'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'

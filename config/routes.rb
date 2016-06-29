@@ -1,6 +1,14 @@
 Rails.application.routes.draw do
 
 
+  get 'maps/index'
+
+  get 'maps/show'
+
+  get 'maps/new'
+
+  get 'maps/edit'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
@@ -23,7 +31,7 @@ Rails.application.routes.draw do
   end
 
   # Api definition
-  namespace :api do
+  namespace :api, defaults: { format: :json }, constraints: { subdomain: 'api' }, path: '/'  do
     # We are going to list our resources here
   end
 
