@@ -6,6 +6,8 @@ Rails.application.routes.draw do
   root 'users#index'
 
   get 'maps' => 'maps#index'
+  
+  get 'library' => 'library#index'
 
   get 'welcome' => 'welcome#home'
 
