@@ -19,7 +19,7 @@ require 'ostruct'
     return res
    end
    
-#get Library api(Details) and return all the Json strings
+#get Library api(Summary) and return all the Json strings
    def getSummary
     url = URI.parse("http://api.lib.sfu.ca/hours/summary")
     res = Net::HTTP.get(url)
