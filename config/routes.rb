@@ -28,6 +28,9 @@ Rails.application.routes.draw do
   resources :users
   end
 
+  get 'transit/index'
+  resources :transit
+
   # Api definition
   namespace :api, defaults: { format: :json }, constraints: { subdomain: 'api' }, path: '/'  do
     # We are going to list our resources here
