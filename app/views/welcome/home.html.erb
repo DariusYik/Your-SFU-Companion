@@ -9,12 +9,10 @@
 <body>
 
 
-
+		<div class="Welcomebox">
+		<img src="/assets/user.png" class ="user_welcome">
 		<h1 id="Welcome">Welcome, <%= current_user.first_name%></h1>
-		<hr id="gradient">
-
-
-			<div class="btn-group">
+		<div class="btn-group">
  			 <button type="button" class="btn btn-primary btn-lg dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
  			   Account <span class="caret"></span>
  			 </button>
@@ -29,9 +27,15 @@
  			   <li><%= link_to "Logout", logout_path, method: "delete" %></li>
 			  </ul>
 			</div>
+		</div>
+
+		
 
 
-<br>
+			
+
+
+
 <br>
 
 		<div id="Modules">
