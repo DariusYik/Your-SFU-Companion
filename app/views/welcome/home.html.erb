@@ -31,14 +31,17 @@
 			</div>
 
 
-
+<br>
+<br>
 
 		<div id="Modules">
 		<a href='/messages'>
 			<img src="/assets/shoutouts.png" class = "fade">
 		</a>
 			<img src="/assets/courses.png" class = "fade">
+		<a href='/library'>
 			<img src="/assets/library.png" class = "fade">
+		</a>
 		<a href='/maps'>
 			<img src="/assets/maps.png" class = "fade">
 		</a>
@@ -51,7 +54,7 @@
 
 
 	<div id="footer">
-	Logged in as <%= current_user.email %>
+	<div class="alert alert-info" role="alert">Logged in as <%= current_user.email %></div>
 	</div>
 </body>
 

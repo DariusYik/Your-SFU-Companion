@@ -38,6 +38,12 @@ body{
 
 }
 
+.alert{
+	opacity: 0.8;
+
+
+}
+
 #Modules{
 
 	width: auto;
@@ -139,13 +145,15 @@ img{
 	right:19px;
 }
 #footer{
-	border-top: 1px solid white;
 	
-	color: white;
-	width: 100%;
+	
+	
+	width: 80%;
 	position: fixed;
 	bottom: 3px;
 	text-align: center;
+	
+	margin-left: 10%;
 
 }
 
