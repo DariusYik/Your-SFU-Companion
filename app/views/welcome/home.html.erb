@@ -9,7 +9,7 @@
 <body>
 
 
-		<div class="Welcomebox">
+		<div class="Welcomebox animated fadeIn">
 		<img src="/assets/user.png" class ="user_welcome">
 		<h1 id="Welcome">Welcome, <%= current_user.first_name%></h1>
 		<div class="btn-group">
@@ -32,32 +32,28 @@
 		
 
 
-			
-
-
-
 <br>
 
-		<div id="Modules">
+		<div id="Modules" >
 		<a href='/messages'>
-			<img src="/assets/shoutouts.png" class = "fade">
+			<img src="/assets/shoutouts.png" class = "fade animated bounceIn">
 		</a>
-			<img src="/assets/courses.png" class = "fade">
+			<img src="/assets/courses.png" class = "animated bounceIn fade">
 		<a href='/library'>
-			<img src="/assets/library.png" class = "fade">
+			<img src="/assets/library.png" class = "animated bounceIn fade">
 		</a>
 		<a href='/maps'>
-			<img src="/assets/maps.png" class = "fade">
+			<img src="/assets/maps.png" class = "animated bounceIn fade">
 		</a>
-			<img src="/assets/social.png" class = "fade">
-			<img src="/assets/calendar.png" class = "fade">
+			<img src="/assets/social.png" class = "animated bounceIn fade">
+			<img src="/assets/calendar.png" class = "animated bounceIn fade">
 		<a href='/transit'>
-			<img src="/assets/transit.png" class = "fade">
+			<img src="/assets/transit.png" class = "animated bounceIn fade">
 		</a>
 	</div>
 
 
-	<div id="footer">
+	<div id="footer" class="animated fadeInUp">
 	<div class="alert alert-info" role="alert">Logged in as <%= current_user.email %></div>
 	</div>
 </body>
