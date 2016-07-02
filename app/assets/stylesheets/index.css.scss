@@ -20,7 +20,7 @@
 
 body{
 	background-color: #6a9afb;
-	background: url('/assets/background.png');
+	background: url('/assets/unblur.png');
 	background-repeat: no-repeat;
 	background-attachment: fixed;
 	background-position: center;
@@ -110,6 +110,8 @@ margin: 2px 2px 2px 2px;
 	margin-left: 750px;
 	margin-top: 250px;
 	border-left: 1px solid white;
+
+
 }
 
 
@@ -124,7 +126,12 @@ top: 400px;
 left: 10%;
 right: auto;
 
+ background: rgba(230,240,255,0.4);
+  border: 2px dashed transparent;
+  box-shadow: 0px 0px 1px 1px rgba(0,0,0,0.15);
+
 }
+
 
 @media screen and (max-width: 1500px) {
 
