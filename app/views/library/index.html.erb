@@ -6,7 +6,7 @@
 
     table {
     border-collapse: collapse;
-    width: 30%;
+    width: 40%;
     }
 
     th, td {
@@ -25,7 +25,7 @@
 
 <h1>Library API PAGE - more stuff will be added!</h1>
 
-<h3>Open Hours</h3>
+<h3>Library Hours</h3>
 <table>
   <tr>
    <th>Library</th>
@@ -33,7 +33,7 @@
    <th>Close</th>
   </tr>
   <% for i in 0..2 %>
-    <tr class="tr_hover">
+    <tr>
       <td><%= getLibOpenArray("location")[i] %></td>
       <td><%= getLibOpenArray("open_time")[i] %></td>
       <td><%= getLibOpenArray("close_time")[i] %></td>
@@ -41,8 +41,20 @@
 <% end %>
 </table>
 <br><br>
+<% library_PCHash = 
+    {"Bennett Library - 2F" => "ben-2-2105-pc" , 
+     "Bennett Library - 3F (WEST)" => "ben-3-w-pc" , 
+     "Bennett Library - 3F (EAST)" => "ben-3-e-pc" ,
+     "Bennett Library - 3F (Macs)" => "ben-3-macs" ,
+     "Bennett Library - 4F" => "ben-4-4009-pc" ,
+     "Bennett Library - 5F" => "ben-5-pc" ,
+     "Bennett Library - 6F" => "ben-6-pc" ,
+     "Bennett Library - 7F" => "ben-7-pcs" ,
+     "Bennett Library - 7F (Macs)" => "ben-7-macs" ,
+     "Belzberg Library (VAN)" => "bel-pc", 
+     "Fraser Library (SUR)" => "surrey-lib"} %>
 
-<h3>Available PCs</h3>
+<h3>PC Availability</h3>
 <table>
   <tr>
     <th>Library</th>
@@ -50,16 +62,14 @@
     <th>Total PC</th>
   </tr>
   
+ <% library_PCHash.each do |key,value| %>
   <tr>
-    <td>Belzberg Library</td>
-    <td><%= getFreePCHash("locations","bel-pc")[0] %></td>
-    <td><%= getFreePCHash("totals","bel-pc")[0] %></td>
+    <td><%= key %></td>
+    <td><%= getFreePCHash("locations",value)[0] %></td>
+    <td><%= getFreePCHash("totals",value)[0] %></td>
   </tr>
-  <tr>
-    <td>Fraser Library</td>
-    <td><%= getFreePCHash("locations","surrey-lib")[0] %></td>
-    <td><%= getFreePCHash("totals","surrey-lib")[0] %></td>
-  </tr>
+  
+ <% end %>
   
 </table>
 
