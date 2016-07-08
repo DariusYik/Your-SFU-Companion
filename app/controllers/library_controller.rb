@@ -5,22 +5,23 @@ class LibraryController < ApplicationController
   end
   
   
-helper_method :getArray
+helper_method :getLibOpenArray
+helper_method :getFreePCHash
 
 require 'net/http'
 require 'ostruct'
 
 
 #get Library api(Details) and return all the Json strings
-   def getDetails
-    url = URI.parse("http://api.lib.sfu.ca/hours/details")
+   def getDetails(address)
+    url = URI.parse(address)
     res = Net::HTTP.get(url)
     return res
    end
    
 #get Library api(Summary) and return all the Json strings
-   def getSummary
-    url = URI.parse("http://api.lib.sfu.ca/hours/summary")
+   def getSummary(address)
+    url = URI.parse(address)
     res = Net::HTTP.get(url)
     return res
    end
@@ -32,15 +33,23 @@ require 'ostruct'
     end
     
 #read parsed hash and return library info as array 
-    def getArray(key)
+    def getLibOpenArray(key)
         returnArray = []
-        obj = parse(getSummary)
+        obj = parse(getSummary("http://api.lib.sfu.ca/hours/summary"))
           for i in obj
             returnArray.push(i[key])
           end
          return returnArray
     end
     
+   
+    def getFreePCHash(field, lib_pc)
+        obj = parse(getSummary("http://api.lib.sfu.ca/equipment/computers/free_summary"))
+        returnArray = []
+        returnArray.push(obj[field][lib_pc])
+        return returnArray
+    end
+   
    
 ##########################################################################   
 ###Code below is for Library detail API #####
