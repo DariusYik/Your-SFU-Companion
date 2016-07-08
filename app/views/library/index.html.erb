@@ -1,7 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    table {
+    border-collapse: collapse;
+    width: 30%;
+}
+
+    th, td {
+      padding: 8px;
+      text-align: left;
+      border-bottom: 1px solid #ddd;
+    }
+    
+    tr:hover {background-color: #f5f5f5}
+      
+      
+    
+  </style>
+  
+</head>
+
 <h1>Library API PAGE - more stuff will be added!</h1>
 
-<% for i in 0..2 %>
-        <%= getArray("location")[i] %>
-        <%= getArray("open_time")[i] %>
-        <%= getArray("close_time")[i] %>
+
+
+<table>
+  <tr>
+   <th>Library</th>
+   <th>Open</th>
+   <th>Close</th>
+  </tr>
+  <% for i in 0..2 %>
+    <tr class="tr_hover">
+      <td><%= getArray("location")[i] %></td>
+      <td><%= getArray("open_time")[i] %></td>
+      <td><%= getArray("close_time")[i] %></td>
+    </tr>
 <% end %>
+</table>
+
+</html>

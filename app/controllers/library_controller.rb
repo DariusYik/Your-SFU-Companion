@@ -1,12 +1,11 @@
 class LibraryController < ApplicationController
-    layout false
+  layout false
 
   def index
   end
   
-  helper_method :getArray
-
-
+  
+helper_method :getArray
 
 require 'net/http'
 require 'ostruct'
@@ -32,15 +31,13 @@ require 'ostruct'
         return obj
     end
     
-    
+#read parsed hash and return library info as array 
     def getArray(key)
         returnArray = []
         obj = parse(getSummary)
-        
           for i in obj
             returnArray.push(i[key])
           end
-
          return returnArray
     end
     
