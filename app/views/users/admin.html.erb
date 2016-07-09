@@ -26,7 +26,7 @@
         <td><%= f.first_name %></td>
         <td><%= f.last_name %></td>
         <td><%= f.email %></td>
-        <td><%= link_to 'Edit', edit_user_path(current_user), class: "linkbtn" %></td> <!--edit later-->
+        <td><%= link_to 'Edit', edit_user_path(f), class: "linkbtn" %></td> <!--edit later-->
         <td><%= link_to 'Delete', f, method: :delete, data: { confirm: 'Are you sure?' }, class: "linkbtn" %></td>
       </tr>
     <% end %>
