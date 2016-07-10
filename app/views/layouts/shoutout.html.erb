@@ -24,7 +24,7 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-        <li class="active"><%= link_to "Create Message", new_message_path %> <span class="sr-only">(current)</span></a></li>
+        <li class="active" style="position:absolute;top:15px;"><%= link_to "Create Message", new_message_path%> <span class="sr-only">(current)</span></a></li>
         
       </ul>
  
@@ -32,7 +32,7 @@
        
           
   
-            <li><%= link_to "Home", root_path%></li>
+            <a href="/welcome"><button type="button" class="btn btn-default navbar-btn">Home</button></a>
  
         
       </ul>
