@@ -30,8 +30,14 @@
 
 <div id="sidebar">
 <a href="javascript:void(0)" class="closebtn" onclick="closeNav()"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></a>
-<h3> <span class="glyphicon glyphicon-time" aria-hidden="true"></span> Library Hours</h3>
-<table id="sidesectable">
+
+
+  <div class="panel panel-primary" style="margin-left:5px; margin-right:5px;">
+  <div class="panel-heading">
+    <h3 class="panel-title"><span class="glyphicon glyphicon-time" aria-hidden="true"></span> Library Hours</h3>
+  </div>
+  <div class="panel-body">
+    <table id="sidesectable">
   <tr>
    <th>Library</th>
    <th>Open</th>
@@ -45,13 +51,21 @@
     </tr>
 <% end %>
 </table>
+</div>
+</div>
+<br>
+<div class="alert alert-info" role="alert" style="margin-left:5px; margin-right:5px;">
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+  <strong>Note:</strong> More features to be added later..!
+</div>
 
 </div>
 
 
-<span style="font-size:30px;cursor:pointer" onclick="openNav()"> ☰ Hours</span>
 
-<br><br>
+
+
+
 <% library_PCHash = 
     {"Bennett Library - 2F" => "ben-2-2105-pc" , 
      "Bennett Library - 3F (WEST)" => "ben-3-w-pc" , 
@@ -66,6 +80,7 @@
      "Fraser Library (SUR)" => "surrey-lib"} %>
 
 <div id="mainsec">
+  <span style="font-size:30px;cursor:pointer" onclick="openNav()"> ☰ Hours</span><br><br>
 <h3><span class="glyphicon glyphicon-hdd" aria-hidden="true"></span> PC Availablility</h3>
 
 <div class ="well well-lg">
