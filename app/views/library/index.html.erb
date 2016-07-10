@@ -8,6 +8,8 @@
   
 </head>
 
+<body>
+
 <nav class="navbar navbar-default">
   <div class="container-fluid">
     <div class="navbar-header">
@@ -16,9 +18,9 @@
         Library
       </a>
 
-      <ul class="navbar-right">
+    
       <a href="/welcome"><button type="button" class="btn btn-default navbar-btn">Home</button></a>
-    </ul>
+    
     </div>
   </div>
 </nav>
@@ -26,9 +28,10 @@
 
 
 
-
-<h3>Library Hours</h3>
-<table>
+<div id="sidebar">
+<a href="javascript:void(0)" class="closebtn" onclick="closeNav()"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></a>
+<h3> <span class="glyphicon glyphicon-time" aria-hidden="true"></span> Library Hours</h3>
+<table id="sidesectable">
   <tr>
    <th>Library</th>
    <th>Open</th>
@@ -43,6 +46,10 @@
 <% end %>
 </table>
 
+</div>
+
+
+<span style="font-size:30px;cursor:pointer" onclick="openNav()"> ☰ Hours</span>
 
 <br><br>
 <% library_PCHash = 
@@ -58,10 +65,11 @@
      "Belzberg Library (VAN)" => "bel-pc", 
      "Fraser Library (SUR)" => "surrey-lib"} %>
 
-<h3>PC Availability</h3>
+<div id="mainsec">
+<h3><span class="glyphicon glyphicon-hdd" aria-hidden="true"></span> PC Availablility</h3>
 
 <div class ="well well-lg">
-<table>
+<table style="width:100%">
   <tr>
     <th>Library</th>
     <th>Available PC</th>
@@ -80,6 +88,19 @@
 </table>
 </div>
 
+</div>
 
 
+<script>
+function openNav() {
+    document.getElementById("sidebar").style.width = "290px";
+    document.getElementById("mainsec").style.marginLeft = "290px";
+}
+
+function closeNav() {
+    document.getElementById("sidebar").style.width = "0";
+    document.getElementById("mainsec").style.marginLeft= "0";
+}
+</script>
+</body>
 </html>

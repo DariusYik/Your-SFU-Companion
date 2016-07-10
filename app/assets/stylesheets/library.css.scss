@@ -8,10 +8,55 @@
 @import "bootstrap";
 
 
- 
+#sidesectable{
+margin-left: 15px;
+} 
+
+#sidebar{
+	background-color:#f8f8f8;
+   
+    height: 100%;
+    width:0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+
+
+}
+
+.well{
+	width: 80%;
+}
+
+.closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+
+
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+
+#mainsec{
+	transition: margin-left .5s;
+    padding: 16px;
+}
   
 .navbar {
 	height: 80px;
+	transition: margin-left .5s;
+
 }
 
 .navbar-brand{
@@ -39,7 +84,9 @@
       
   
  .navbar-btn{
- 	margin-top: 25px;
+ 	margin-top: 20px;
+ 	position: absolute;
+ 	right: 17px;
  }
 
  .navbar .divider-vertical {
