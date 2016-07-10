@@ -4,14 +4,16 @@ class UsersController < ApplicationController
 
   before_action :require_user, :require_admin, only: [:admin, :destroy]
   before_action :require_no_login, only: [:index]
+  before_action :require_admin,     only: :destroy
+  skip_before_filter :verify_authenticity_token, :only => :destroy
   
   def new
     @user = User.new
   end
 
-  # def show
-  #   @user = User.find(params[:id])
-  # end
+  def show
+    @user = User.find(params[:id])
+  end
 
   def create
     @user = User.new(user_params)
@@ -42,8 +44,8 @@ class UsersController < ApplicationController
   end
 
   def destroy
-    @user=User.find(params[:id]).destroy
-    flash[:success] = "User deleted"
+    User.find(params[:id]).destroy
+    # flash[:success] = "User deleted"
     redirect_to '/admin'
   end
 
