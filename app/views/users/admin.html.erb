@@ -59,8 +59,8 @@
         <td><%= f.first_name %></td>
         <td><%= f.last_name %></td>
         <td><%= f.email %></td>
-        <td><%= link_to 'Edit', edit_user_path(f), class: "linkbtn" %></td> <!--edit later-->
-        <td><%= link_to 'Delete', f, method: :delete, data: { confirm: 'Are you sure?' }, class: "linkbtn" %></td>
+        <td style="width:20px; padding:0px"><%= link_to 'Edit', edit_user_path(f), class: "linkbtn" %></td> <!--edit later-->
+        <td style="width:20px; padding:0px"><%= link_to 'Delete', f, method: :delete, data: { confirm: 'Are you sure?' }, class: "linkbtn" %></td>
       </tr>
     <% end %>
   </table>
