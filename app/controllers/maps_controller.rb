@@ -1,6 +1,6 @@
 class MapsController < ApplicationController
 
-  layout false
+  layout 'maps'
 
   def index
   end

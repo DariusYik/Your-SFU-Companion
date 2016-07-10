@@ -5,16 +5,48 @@
 <head>
   <title>Admin panel</title>
   <%= stylesheet_link_tag('admin', :media=>'all')%>
-  <%= javascript_include_tag 'admin', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'home', 'data-turbolinks-track' => true %>
 </head>
 
 <body>
-  <div class="mainhead">
-    <br><br>
-    <h1> User database</h1>
-    <br><br>
+
+
+<div class="row">
+
+    <div class="side-menu">
+    
+    <nav class="navbar navbar-default" role="navigation">
+    <div class="navbar-header">
+        <div class="brand-wrapper">
+          <button type="button" class="navbar-toggle">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+
+            <!-- Brand -->
+            <div class="brand-name-wrapper">
+                <a class="navbar-brand" href="/admin">
+                     Admin Panel
+                </a>
+            </div>
+
+        </div>
+
+    </div>
+    <div class="side-menu-container">
+        <ul class="nav navbar-nav">
+            <li class="active"><a href="#"><span class="glyphicon glyphicon-user"></span> User Database</a></li>
+            <li><a href="/"><span class="glyphicon glyphicon-home"></span> Home</a></li>
+          </ul>
+        </div>
+  </nav>
   </div>
-  <br>
+
+
+<div class="container-fluid">
+<div class="side-body"><br><br>
   <table id="indextable">
     <tr>
       <th>First Name</th>
@@ -32,10 +64,24 @@
       </tr>
     <% end %>
   </table>
+</div>
+</div>
+</div>
+
   <br>
   <hr>
-  <br>
-  <%= link_to "Home", '/', class: "linkbtn1" %>
+
   <br>
 </body>
+<script type="text/javascript">
+$(function () {
+    $('.navbar-toggle').click(function () {
+        $('.navbar-nav').toggleClass('slide-in');
+        $('.side-body').toggleClass('body-slide-in');
+        $('#search').removeClass('in').addClass('collapse').slideUp(200);
+        
+    });
+   
+});
+</script>
 </html>
