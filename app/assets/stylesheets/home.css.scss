@@ -145,14 +145,10 @@ img{
 	margin: 0px;
 	}
 
-.fade{
-	opacity:1;
-	-moz-transition: opacity .25s ease-in-out;
-	-webkit-transition: opacity .25s ease-in-out;
-	transition: opacity .25s ease-in-out;
-}
-.fade:hover{
-	opacity: 0.5;
+
+
+.disabled_module{
+	opacity: 0.4;
 }
 
 .logoutbutton{
