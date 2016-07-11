@@ -1,6 +1,6 @@
 class TransitController < ApplicationController
 
-layout false
+layout 'transit'
 
   def index
   end
