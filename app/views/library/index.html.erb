@@ -4,8 +4,8 @@
 
   <%= stylesheet_link_tag'library', :media=>'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'home', 'data-turbolinks-track' => true %>
- 
-  
+
+
 </head>
 
 <body>
@@ -18,9 +18,8 @@
         Library
       </a>
 
-    
-      <a href="/welcome"><button type="button" class="btn btn-default navbar-btn">Home</button></a>
-    
+      <%= link_to "Home", root_path, :class=>"btn btn-default navbar-btn" %>
+      
     </div>
   </div>
 </nav>
@@ -66,9 +65,9 @@
 
 
 
-<% library_PCHash = 
-    {"Bennett Library - 2F" => "ben-2-2105-pc" , 
-     "Bennett Library - 3F (WEST)" => "ben-3-w-pc" , 
+<% library_PCHash =
+    {"Bennett Library - 2F" => "ben-2-2105-pc" ,
+     "Bennett Library - 3F (WEST)" => "ben-3-w-pc" ,
      "Bennett Library - 3F (EAST)" => "ben-3-e-pc" ,
      "Bennett Library - 3F (Macs)" => "ben-3-macs" ,
      "Bennett Library - 4F" => "ben-4-4009-pc" ,
@@ -76,7 +75,7 @@
      "Bennett Library - 6F" => "ben-6-pc" ,
      "Bennett Library - 7F" => "ben-7-pcs" ,
      "Bennett Library - 7F (Macs)" => "ben-7-macs" ,
-     "Belzberg Library (VAN)" => "bel-pc", 
+     "Belzberg Library (VAN)" => "bel-pc",
      "Fraser Library (SUR)" => "surrey-lib"} %>
 
 <div id="mainsec">
@@ -90,16 +89,16 @@
     <th>Available PC</th>
     <th>Total PC</th>
   </tr>
-  
+
  <% library_PCHash.each do |key,value| %>
   <tr>
     <td><%= key %></td>
     <td><%= getFreePCHash("locations",value)[0] %></td>
     <td><%= getFreePCHash("totals",value)[0] %></td>
   </tr>
-  
+
  <% end %>
-  
+
 </table>
 </div>
 
