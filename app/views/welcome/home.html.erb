@@ -18,7 +18,8 @@
 		Account <span class="caret"></span>
 		</button>
 		<ul class="dropdown-menu">
-			<li><a href="#"><span class="glyphicon glyphicon-user" aria-hidden="true"></span> Profile</a></li>
+			<!-- <li><a href="#"><span class="glyphicon glyphicon-user" aria-hidden="true"></span> Profile</a></li> -->
+			<li><%= link_to "Profile", current_user %></li>
 			<% if current_user %>
 				<% if current_user.email == "admin@email.com" %>
 					<li><%= link_to " Admin Panel",'admin'%></li>
