@@ -68,7 +68,9 @@ require 'ostruct'
     def getReservedBookResult
         returnArray = []
         obj = parse(getSummary(construct_search_URL))
-        returnArray.push(obj["reserves"])
+        for i in obj["reserves"]
+            returnArray.push(i["course"])
+        end
         return returnArray
     end
     
