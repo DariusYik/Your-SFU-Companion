@@ -7,7 +7,6 @@ class LibraryController < ApplicationController
   
 helper_method :getLibOpenArray
 helper_method :getFreePCHash
-#helper_method :reserved_book
 helper_method :getReservedBookResult
 
 require 'net/http'
@@ -53,22 +52,23 @@ require 'ostruct'
     end
    
    
+    #take user input (search keyword)
     def reserved_book
         keyword_search = params[:keyword]
         return keyword_search
     end
 
+    # concatenate user search keyword to the API url
     def construct_search_URL
         url = "http://api.lib.sfu.ca/reserves/search?department=" + reserved_book
         return url
     end
     
+    # with concatenated url, retrieve results
     def getReservedBookResult
         returnArray = []
         obj = parse(getSummary(construct_search_URL))
-          for i in obj
-            returnArray.push(i[key])
-          end
+        returnArray.push(obj["reserves"])
         return returnArray
     end
     
