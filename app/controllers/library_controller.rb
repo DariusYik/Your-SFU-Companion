@@ -7,6 +7,7 @@ class LibraryController < ApplicationController
   
 helper_method :getLibOpenArray
 helper_method :getFreePCHash
+helper_method :reserved_book
 
 require 'net/http'
 require 'ostruct'
@@ -50,6 +51,12 @@ require 'ostruct'
         return returnArray
     end
    
+   
+    def reserved_book
+        keyword_search = params[:keyword]
+        return keyword_search
+    end
+
    
 ##########################################################################   
 ###Code below is for Library detail API #####

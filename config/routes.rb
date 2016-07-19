@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   get 'maps' => 'maps#index'
   
   get 'library' => 'library#index'
+  match '/reserved_book' => 'library#reserved_book', :via => :post
 
   get 'welcome' => 'welcome#home'
 

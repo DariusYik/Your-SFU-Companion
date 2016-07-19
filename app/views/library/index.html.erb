@@ -104,6 +104,15 @@
 
 </div>
 
+<div>
+<h3>Reserved Book Search</h3>
+<%= form_tag('/reserved_book', :method => 'post') do %>
+    
+    <%=text_field_tag 'keyword'%>
+    <div><%= submit_tag 'Search' %></div>
+<% end %>
+</div>
+
 
 <script>
 function openNav() {
