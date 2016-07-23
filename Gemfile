@@ -17,6 +17,7 @@ gem 'coffee-rails', '~> 4.1.0'
 # gem 'therubyracer', platforms: :ruby
 gem 'simple_form', '~> 3.2', '>= 3.2.1'
 
+gem "simple_calendar", "~> 2.0"
 # For Google Maps API
 gem 'gmaps4rails'
 
