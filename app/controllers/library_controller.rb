@@ -72,6 +72,11 @@ require 'ostruct'
         obj = parse(getSummary(construct_search_URL))
         for i in obj["reserves"]
             returnArray.push(i["course"])
+            returnArray.push(i["instructors"])
+            returnArray.push(i["title"])
+            returnArray.push(i["author"])
+            returnArray.push(i["cover_url"])
+            returnArray.push(i["isns"])
         end
         return returnArray
     end
