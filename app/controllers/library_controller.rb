@@ -69,14 +69,25 @@ require 'ostruct'
     # with concatenated url, retrieve results
     def getReservedBookResult
         returnArray = []
+        
+        
         obj = parse(getSummary(construct_search_URL))
         for i in obj["reserves"]
-            returnArray.push(i["course"])
-            returnArray.push(i["instructors"])
-            returnArray.push(i["title"])
-            returnArray.push(i["author"])
-            returnArray.push(i["cover_url"])
-            returnArray.push(i["isns"])
+            returnHash = Hash.new
+            returnArray.push(returnHash)
+            returnHash["Course"] = i["course"]
+            returnHash["Instructors"] = i["instructors"]
+            returnHash["Title"] = i["title"]
+            returnHash["Author"] = i["author"]
+            returnHash["cover_url"] = i["cover_url"]
+            returnHash["ISNS"] = i["isns"]
+            
+            #returnArray.push(i["course"])
+            #returnArray.push(i["instructors"])
+            # returnArray.push(i["title"])
+            # returnArray.push(i["author"])
+            # returnArray.push(i["cover_url"])
+            # returnArray.push(i["isns"])
         end
         return returnArray
     end

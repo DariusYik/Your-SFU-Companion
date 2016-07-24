@@ -1,2 +1,18 @@
 <h2>Search Results</h2>
-<%= getReservedBookResult %>
+<% results = getReservedBookResult %>
+<% i = 1 %>
+<% results.each do |result| %>
+    <% result.each do |key, value| %>
+      <% if i % 6 == 0 %>
+          <%= key +": " %>
+          <%= value %>
+          <br>
+          <hr>
+      <% else %>
+          <%= key +": " %>
+          <%= value %>
+          <br>
+      <% end %> 
+      <% i = i + 1 %> 
+    <% end %>
+ <% end %>
