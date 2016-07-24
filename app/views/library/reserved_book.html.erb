@@ -4,24 +4,44 @@
 
 <% #results contains all the information of all of the courses specified %>
 <% #each result contains course information for one course %>
+
 <% results.each do |result| %>
+  <table style="width:100%">
     <% result.each do |key, value| %>
+    <tr>
       <% if key == "Item_url" %>
+          <td>
           See Details & Availablility
           <%= link_to "click here!", value %>
-          <br>
-          <hr>
+          </td>
+        
       <% elsif key == "Cover_url" %>
-          <%= image_tag(value) %>   
-          <br>
+          <td>
+          <%= image_tag(value) %> 
+          </td>
+          
       <% elsif key == "Instructors" %>
+          <td>
           <%= key +": " %>
           <%= value[0] %>
-          <br>
+          </td>
+          
       <% else %>
+        <td>    
           <%= key +": " %>
           <%= value %>
-          <br>
+          </td>
+        
       <% end %> 
+      </tr>
+      <br>
     <% end %>
+    </table>
  <% end %>
+
+<style>
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+</style>
