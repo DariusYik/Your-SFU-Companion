@@ -54,13 +54,15 @@ require 'ostruct'
    
     #take user input (search keyword)
     def reserved_book
-        keyword_search = params[:keyword]
-        return keyword_search
+        course_name = params[:course_name]
+        course_number = params[:course_number]
+        return course_name, course_number
     end
 
     # concatenate user search keyword to the API url
     def construct_search_URL
-        url = "http://api.lib.sfu.ca/reserves/search?department=" + reserved_book
+        name, number = reserved_book
+        url = "http://api.lib.sfu.ca/reserves/search?department=" + name + "&number=" + number
         return url
     end
     
