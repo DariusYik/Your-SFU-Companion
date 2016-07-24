@@ -1,6 +1,9 @@
 <h2>Reserved Book Search Results</h2>
+
 <% results = getReservedBookResult %>
 
+<% #results contains all the information of all of the courses specified %>
+<% #each result contains course information for one course %>
 <% results.each do |result| %>
     <% result.each do |key, value| %>
       <% if key == "Item_url" %>

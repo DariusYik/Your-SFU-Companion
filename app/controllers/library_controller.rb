@@ -59,7 +59,7 @@ require 'ostruct'
         return course_name, course_number
     end
 
-    # concatenate user search keyword to the API url
+    # concatenate course name and number to the API url
     def construct_search_URL
         name, number = reserved_book
         url = "http://api.lib.sfu.ca/reserves/search?department=" + name + "&number=" + number
@@ -67,10 +67,9 @@ require 'ostruct'
     end
     
     # with concatenated url, retrieve results
+    # return array of Hashes
     def getReservedBookResult
         returnArray = []
-        
-        
         obj = parse(getSummary(construct_search_URL))
         for i in obj["reserves"]
             returnHash = Hash.new
@@ -80,15 +79,8 @@ require 'ostruct'
             returnHash["Title"] = i["title"]
             returnHash["Author"] = i["author"]
             returnHash["Cover_url"] = i["cover_url"]
-            returnHash["Item_url"] = i["item_url"]
             returnHash["ISNS"] = i["isns"]
-            
-            #returnArray.push(i["course"])
-            #returnArray.push(i["instructors"])
-            # returnArray.push(i["title"])
-            # returnArray.push(i["author"])
-            # returnArray.push(i["cover_url"])
-            # returnArray.push(i["isns"])
+            returnHash["Item_url"] = i["item_url"]
         end
         return returnArray
     end

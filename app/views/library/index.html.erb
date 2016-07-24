@@ -107,6 +107,8 @@
 <div>
 <h3>Reserved Book Search (search with course name for now ex."CMPT" - more stuff to be added) </h3>
 <%= form_tag('/reserved_book', :method => 'post') do %>
+
+    <% #search by course name and number %>
     <label for="course_name">Course Name</label>
     <%=text_field_tag 'course_name'%>
     <br>
