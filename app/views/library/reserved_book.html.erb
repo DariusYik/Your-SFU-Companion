@@ -3,12 +3,12 @@
 
 <% results.each do |result| %>
     <% result.each do |key, value| %>
-      <% if key == "ISNS" %>
-          <%= key +": " %>
-          <%= value %>
+      <% if key == "Item_url" %>
+          See Details & Availablility
+          <%= link_to "click here!", value %>
           <br>
           <hr>
-      <% elsif key == "cover_url" %>
+      <% elsif key == "Cover_url" %>
           <%= image_tag(value) %>   
           <br>
       <% else %>
@@ -16,6 +16,5 @@
           <%= value %>
           <br>
       <% end %> 
-    
     <% end %>
  <% end %>

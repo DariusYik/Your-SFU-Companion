@@ -79,7 +79,8 @@ require 'ostruct'
             returnHash["Instructors"] = i["instructors"]
             returnHash["Title"] = i["title"]
             returnHash["Author"] = i["author"]
-            returnHash["cover_url"] = i["cover_url"]
+            returnHash["Cover_url"] = i["cover_url"]
+            returnHash["Item_url"] = i["item_url"]
             returnHash["ISNS"] = i["isns"]
             
             #returnArray.push(i["course"])
