@@ -2,42 +2,50 @@
 
 <% results = getReservedBookResult %>
 
-<% #results contains all the information of all of the courses specified %>
-<% #each result contains course information for one course %>
-
-<% results.each do |result| %>
-  <table style="width:100%">
-    <% result.each do |key, value| %>
-    <tr>
-      <% if key == "Item_url" %>
-          <td>
-          See Details & Availablility
-          <%= link_to "click here!", value %>
-          </td>
+<% #In case there's no result %>
+<% if results.empty? %>
+  <h3>Please Enter valid Course name and Course number</h3>
+  
+  <% #redirect to library page %>
+  <script type="text/javascript">
+    window.location.href="/library" 
+  </script>
+  
+<% else %>
+  <% #results contains all the information of all of the courses specified %>
+  <% #each result contains course information for one course %>
+  <% results.each do |result| %>
+    <table style="width:100%">
+      <% result.each do |key, value| %>
+      <tr>
+        <% if key == "Item_url" %>
+            <td>
+            See Details & Availablility
+            <%= link_to "click here!", value %>
+            </td>
         
-      <% elsif key == "Cover_url" %>
+        <% elsif key == "Cover_url" %>
           <td>
-          <%= image_tag(value) %> 
+            <%= image_tag(value) %> 
           </td>
           
-      <% elsif key == "Instructors" %>
+        <% elsif key == "Instructors" %>
           <td>
-          <%= key +": " %>
-          <%= value[0] %>
+            <%= key +": " %>
+            <%= value[0] %>
           </td>
-          
-      <% else %>
-        <td>    
-          <%= key +": " %>
-          <%= value %>
+        <% else %>
+          <td>    
+            <%= key +": " %>
+            <%= value %>
           </td>
-        
-      <% end %> 
+        <% end %> 
       </tr>
       <br>
-    <% end %>
+      <% end %>
     </table>
  <% end %>
+<% end %>
 
 <style>
 table, th, td {
