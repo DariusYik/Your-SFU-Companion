@@ -12,6 +12,7 @@ Rails.application.routes.draw do
   get 'maps' => 'maps#index'
   
   get '/courses' => 'courses#index'
+  match '/course_search' => 'courses#course_search', :via => :post
   
   get 'library' => 'library#index'
   match '/reserved_book' => 'library#reserved_book', :via => :post
