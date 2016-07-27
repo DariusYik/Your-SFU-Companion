@@ -7,7 +7,7 @@ class CoursesController < ApplicationController
   
 
 helper_method :getCourseSearchResult
-helper_method :testing
+
 require 'net/http'
 require 'ostruct'
 
@@ -27,7 +27,7 @@ require 'ostruct'
     
 
     #take user input (search keyword)
-    def reserved_book
+    def courseSearch
         course_year = params[:course_year]
         course_term = params[:course_term]
         course_name = params[:course_name]
@@ -37,7 +37,7 @@ require 'ostruct'
 
     # concatenate course name and number to the API url
     def construct_search_URL
-        year, term, name, number = reserved_book
+        year, term, name, number = courseSearch
         url = "http://www.sfu.ca/bin/wcm/course-outlines?" + year + "/" + term + "/" + name + "/" + number
         return url
     end
@@ -57,8 +57,6 @@ require 'ostruct'
         return returnArray
     end
   
-   def testing (title, section)
-     return title, section
-   end
+  
    
 end
