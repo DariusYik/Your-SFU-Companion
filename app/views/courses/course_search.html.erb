@@ -6,4 +6,10 @@
     <%= result['Title'] %>
     <%= result['Section'] %>
     <br>
+    
+    <% details = getCourseDetails(result['Section']) %>
+    <%= details['Desciption'] %>  
+    <%= details['Note'] %>  
+     <br>
+     <br>
 <% end %>

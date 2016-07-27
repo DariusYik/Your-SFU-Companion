@@ -7,7 +7,7 @@ class CoursesController < ApplicationController
   
 
 helper_method :getCourseSearchResult
-
+helper_method :getCourseDetails
 require 'net/http'
 require 'ostruct'
 
@@ -56,6 +56,35 @@ require 'ostruct'
         
         return returnArray
     end
+  
+  
+    def courseSearchwithSection(section)
+        course_year = params[:course_year]
+        course_term = params[:course_term]
+        course_name = params[:course_name]
+        course_number = params[:course_number]
+        course_section = section
+        return course_year, course_term, course_name, course_number, course_section
+    end
+
+    # concatenate course name and number to the API url
+    def construct_search_URL_withSection(section)
+        year, term, name, number, section = courseSearchwithSection(section)
+        url = "http://www.sfu.ca/bin/wcm/course-outlines?" + year + "/" + term + "/" + name + "/" + number + "/" + section
+        return url
+    end
+    
+    # with concatenated url, retrieve results
+    # return array of Hashes
+    def getCourseDetails(section)
+        obj = parse(getSummary(construct_search_URL_withSection(section)))
+        returnHash = Hash.new
+        returnHash["Desciption"] = obj["info"]["courseDetails"]
+        returnHash["Note"] = obj["info"]["notes"]
+        
+        
+        return returnHash
+    end  
   
   
    
