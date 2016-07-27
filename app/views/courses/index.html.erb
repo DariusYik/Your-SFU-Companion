@@ -3,14 +3,18 @@
 <%= form_tag('/course_search', :method => 'post') do %>
 
     <% #search by course name and number %>
+    <label for="course_year">Course Year</label>
+    <%=text_field_tag 'course_year' %>
+    <br>
+    <label for="course_term">Course Term</label>
+    <%=text_field_tag 'course_term' %>
+    <br>
     <label for="course_name">Course Name</label>
     <%=text_field_tag 'course_name' %>
     <br>
     <label for="course_number">Course Number</label>
     <%=text_field_tag 'course_number'%>
     
-    <label for="course_section">Course Section</label>
-    <%=text_field_tag 'course_section' %>
     
     <div><%= submit_tag 'Search' %></div>
 <% end %>

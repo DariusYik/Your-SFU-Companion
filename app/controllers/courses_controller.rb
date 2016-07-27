@@ -7,7 +7,7 @@ class CoursesController < ApplicationController
   
 
 helper_method :getCourseSearchResult
-
+helper_method :testing
 require 'net/http'
 require 'ostruct'
 
@@ -28,16 +28,17 @@ require 'ostruct'
 
     #take user input (search keyword)
     def reserved_book
+        course_year = params[:course_year]
+        course_term = params[:course_term]
         course_name = params[:course_name]
         course_number = params[:course_number]
-        course_section = params[:course_section]
-        return course_name, course_number, course_section
+        return course_year, course_term, course_name, course_number
     end
 
     # concatenate course name and number to the API url
     def construct_search_URL
-        name, number, section = reserved_book
-        url = "http://www.sfu.ca/bin/wcm/course-outlines?2016/summer/" + name + "/" + number + "/" + section
+        year, term, name, number = reserved_book
+        url = "http://www.sfu.ca/bin/wcm/course-outlines?" + year + "/" + term + "/" + name + "/" + number
         return url
     end
     
@@ -46,8 +47,18 @@ require 'ostruct'
     def getCourseSearchResult
         returnArray = []
         obj = parse(getSummary(construct_search_URL))
-        returnArray.push(obj)
+        for i in obj
+            returnHash = Hash.new
+            returnArray.push(returnHash)
+            returnHash["Title"] = i["title"]
+            returnHash["Section"] = i["text"]
+        end
+        
         return returnArray
     end
   
+   def testing (title, section)
+     return title, section
+   end
+   
 end
