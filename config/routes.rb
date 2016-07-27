@@ -1,14 +1,17 @@
 Rails.application.routes.draw do
 
-  get 'courses/index'
+  
 
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   root 'users#index'
-
+  
+  
   get 'maps' => 'maps#index'
+  
+  get '/courses' => 'courses#index'
   
   get 'library' => 'library#index'
   match '/reserved_book' => 'library#reserved_book', :via => :post
