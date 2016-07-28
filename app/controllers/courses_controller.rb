@@ -32,7 +32,7 @@ require 'ostruct'
         course_term = params[:course_term]
         course_name = params[:course_name]
         course_number = params[:course_number]
-        course_number = "276"   if params[:course_number].blank?
+        course_number = "*"   if params[:course_number].blank?
         return course_year, course_term, course_name, course_number
     end
 
