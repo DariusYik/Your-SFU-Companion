@@ -12,8 +12,10 @@
 
 <% #display course title and section %>
 <% results.each do |result| %>
+    <strong>
     <%= result['Title'] %>
     <%= result['Section'] %>
+    </strong>
     <br>
     
     <% details = getCourseDetails(result['Section']) %>
