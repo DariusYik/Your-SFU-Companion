@@ -57,7 +57,8 @@ require 'ostruct'
         return returnArray
     end
   
-  
+  ######################## Display Course Details ####################
+  ######################### hard coded- might need to refactor code later###
     def courseSearchwithSection(section)
         course_year = params[:course_year]
         course_term = params[:course_term]
@@ -79,13 +80,30 @@ require 'ostruct'
     def getCourseDetails(section)
         obj = parse(getSummary(construct_search_URL_withSection(section)))
         returnHash = Hash.new
-        returnHash["Desciption"] = obj["info"]["courseDetails"]
+        returnHash["Delivery Method"] = obj["info"]["deliveryMethod"]
+        returnHash["Desciption"] = obj["info"]["description"]
+        returnHash["Prerequisites"] = obj["info"]["prerequisites"]
         returnHash["Note"] = obj["info"]["notes"]
+        
+        returnHash["Instructor"] = obj["instructor"][0]["name"]
+        returnHash["Email"] = obj["instructor"][0]["email"]
+        
+        returnHash["Start time"] = obj["courseSchedule"][0]["startTime"]
+        returnHash["Room"] = obj["courseSchedule"][0]["roomNumber"]
+        returnHash["Days"] = obj["courseSchedule"][0]["days"]
+        returnHash["End time"] = obj["courseSchedule"][0]["endTime"]
+        returnHash["Building"] = obj["courseSchedule"][0]["buildingCode"]
+        returnHash["Campus"] = obj["courseSchedule"][0]["campus"]
+        
+        returnHash["Exam Start"] = obj["examSchedule"][0]["startTime"]
+        returnHash["Exam Date"] = obj["examSchedule"][0]["startDate"]
+        returnHash["Exam room"] = obj["examSchedule"][0]["roomNumber"]
+        returnHash["Exam End"] = obj["examSchedule"][0]["endTime"]
+        returnHash["ExamBuilding"] = obj["examSchedule"][0]["buildingCode"]
+        returnHash["ExamCampus"] = obj["examSchedule"][0]["campus"]
         
         
         return returnHash
     end  
   
-  
-   
 end
