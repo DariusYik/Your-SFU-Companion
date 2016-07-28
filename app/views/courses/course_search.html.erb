@@ -1,4 +1,5 @@
 <h2>Course Search Results - course_search.html.erb file - more to be added!</h2>
+
 <% results = getCourseSearchResult %>
 
 <% if results.empty? %>
@@ -7,7 +8,8 @@
   <script type="text/javascript">
     window.setTimeout(function(){window.location.href="/courses"},3000)
   </script>
- <% end %>
+<% end %>
+
 <% #display course title and section %>
 <% results.each do |result| %>
     <%= result['Title'] %>
@@ -15,7 +17,7 @@
     <br>
     
     <% details = getCourseDetails(result['Section']) %>
-    
+    Instructor:
     <%= instrInfo = "#{details['Instructor']} #{details['Email']}" %><br>
     <%= time = "#{details['Start time']} - #{details['End time']} #{details['Days']}" %>
     <%= location = "#{details['Room']} #{details['Building']} #{details['Campus']}" %><br>
