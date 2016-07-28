@@ -95,6 +95,7 @@ require 'ostruct'
           returnHash["Room"] = obj["courseSchedule"][0]["roomNumber"]
           returnHash["Days"] = obj["courseSchedule"][0]["days"]
           returnHash["End time"] = obj["courseSchedule"][0]["endTime"]
+          returnHash["Lecture type"] = obj["courseSchedule"][0]["sectionCode"]
           returnHash["Building"] = obj["courseSchedule"][0]["buildingCode"]
           returnHash["Campus"] = obj["courseSchedule"][0]["campus"]
         end

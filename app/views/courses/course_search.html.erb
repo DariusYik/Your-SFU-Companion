@@ -19,18 +19,19 @@
     </tr>
     
 <% results.each do |result| %>
-  
+    
+  <% #get detail info for each course %>
+  <% details = getCourseDetails(result['Section']) %>
+
     <tr>
       <td>
     <strong>
     <%= result['Title'] %>
     <%= result['Section'] %>
+     <%= "( #{details['Lecture type']} )" %>
     </strong>
     </td>
-    
-    
-      <td>
-    <% details = getCourseDetails(result['Section']) %>
+    <td>
     Instructor:
     <%= instrInfo = "#{details['Instructor']} #{details['Email']}" %><br>
     Schedule:
