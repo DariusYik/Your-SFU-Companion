@@ -151,7 +151,7 @@ padding: 0px 10px;
 
 .message {
 	box-sizing: border-box;
-	background-color: #999999;
+	background-color: #699cfc;
 	margin-bottom: 25px;
 	margin-right: 10px;
 	margin-left: 10px;
@@ -178,13 +178,14 @@ padding: 0px 10px;
 
 .message:nth-child(4n) {
 	clear: left;
+
 }
 
 /* Message show-page styles */
 
 .message-show {
 	box-sizing: border-box;
-	background-color: #999999;
+	background-color: #699cfc;
 	padding: 2.0em 1.5em;
 	border-bottom: 4px solid #0a8fd5;
 	border-radius: 0px;

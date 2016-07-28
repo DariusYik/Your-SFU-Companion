@@ -1,0 +1,20 @@
+
+<h3>Course Search  - more to be added!</h3>
+<%= form_tag('/course_search', :method => 'post') do %>
+
+    <% #search by year, term, course name and number %>
+    <label for="course_year">Course Year</label>
+    <%=text_field_tag 'course_year', '2016' %>
+    <br>
+    <label for="course_term">Course Term</label>
+    <%=text_field_tag 'course_term', 'Fall' %>
+    <br>
+    <label for="course_name">Course Name</label>
+    <%=text_field_tag 'course_name', 'CMPT' %>
+    <br>
+    <label for="course_number">Course Number</label>
+    <%=text_field_tag 'course_number', '276'%>
+    
+    
+    <div><%= submit_tag 'Search' %></div>
+<% end %>

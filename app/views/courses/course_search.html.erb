@@ -1,0 +1,33 @@
+<h2>Course Search Results - course_search.html.erb file - more to be added!</h2>
+
+<% results = getCourseSearchResult %>
+
+<% if results.empty? %>
+  <h3>Please Enter valid Entries. Redirecting...</h3>
+  <% #redirect to courses page %>
+  <script type="text/javascript">
+    window.setTimeout(function(){window.location.href="/courses"},3000)
+  </script>
+<% end %>
+
+<% #display course title and section %>
+<% results.each do |result| %>
+    <%= result['Title'] %>
+    <%= result['Section'] %>
+    <br>
+    
+    <% details = getCourseDetails(result['Section']) %>
+    Instructor:
+    <%= instrInfo = "#{details['Instructor']} #{details['Email']}" %><br>
+    Schedule:
+    <%= time = "#{details['Start time']} - #{details['End time']} #{details['Days']}" %>
+    <%= location = "#{details['Room']} #{details['Building']} #{details['Campus']}" %><br>
+    Exam: 
+    <%= examTime = "#{details['Exam Start']} - #{details['Exam End']} #{details['Exam Date']}" %>
+    <%= examLocation = "#{details['Exam room']} #{details['ExamBuilding']} #{details['ExamCampus']}" %>
+    
+    
+    
+     <br>
+     <br>
+<% end %>
