@@ -4,16 +4,16 @@
 
     <% #search by year, term, course name and number %>
     <label for="course_year">Course Year</label>
-    <%=text_field_tag 'course_year' %>
+    <%=text_field_tag 'course_year', '2016' %>
     <br>
     <label for="course_term">Course Term</label>
-    <%=text_field_tag 'course_term' %>
+    <%=text_field_tag 'course_term', 'Fall' %>
     <br>
     <label for="course_name">Course Name</label>
-    <%=text_field_tag 'course_name' %>
+    <%=text_field_tag 'course_name', 'CMPT' %>
     <br>
     <label for="course_number">Course Number</label>
-    <%=text_field_tag 'course_number'%>
+    <%=text_field_tag 'course_number', '276'%>
     
     
     <div><%= submit_tag 'Search' %></div>

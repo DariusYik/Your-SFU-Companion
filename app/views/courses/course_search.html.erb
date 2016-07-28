@@ -1,6 +1,13 @@
 <h2>Course Search Results - course_search.html.erb file - more to be added!</h2>
 <% results = getCourseSearchResult %>
 
+<% if results.empty? %>
+  <h3>Please Enter valid Entries. Redirecting...</h3>
+  <% #redirect to courses page %>
+  <script type="text/javascript">
+    window.setTimeout(function(){window.location.href="/courses"},3000)
+  </script>
+ <% end %>
 <% #display course title and section %>
 <% results.each do |result| %>
     <%= result['Title'] %>
