@@ -11,13 +11,25 @@
 <% end %>
 
 <% #display course title and section %>
+<table border= "solid">
+    <tr>
+      <th>Course</th>
+      <th>Details</th>
+      <br>
+    </tr>
+    
 <% results.each do |result| %>
+  
+    <tr>
+      <td>
     <strong>
     <%= result['Title'] %>
     <%= result['Section'] %>
     </strong>
-    <br>
+    </td>
     
+    
+      <td>
     <% details = getCourseDetails(result['Section']) %>
     Instructor:
     <%= instrInfo = "#{details['Instructor']} #{details['Email']}" %><br>
@@ -27,9 +39,8 @@
     Exam: 
     <%= examTime = "#{details['Exam Start']} - #{details['Exam End']} #{details['Exam Date']}" %>
     <%= examLocation = "#{details['Exam room']} #{details['ExamBuilding']} #{details['ExamCampus']}" %>
-    
-    
-    
-     <br>
-     <br>
+    </td>
+    </tr>
+  
 <% end %>
+</table>
