@@ -13,7 +13,7 @@ margin-left: 15px;
 } 
 
 #sidebar{
-	background-color:#f8f8f8;
+    background-color:#f8f8f8;
    
     height: 100%;
     width:0;
@@ -29,12 +29,25 @@ margin-left: 15px;
 
 }
 
+#searchbtn{
+    margin-left: 12px;
+}
+
+#coursename{
+    margin-left: 18px;
+}
+
+
+#coursenumber{
+    margin-left: 3px;
+}
+
 #lib_hours{
-	margin-left: 6px;
+    margin-left: 6px;
 }
 
 .well{
-	width: 80%;
+    width: 100%;
 }
 
 .closebtn {
@@ -53,22 +66,22 @@ margin-left: 15px;
 }
 
 #mainsec{
-	transition: margin-left .5s;
+    transition: margin-left .5s;
     padding: 16px;
 }
   
 .navbar {
-	height: 80px;
-	transition: margin-left .5s;
+    height: 80px;
+    transition: margin-left .5s;
 
 }
 
 .navbar-brand{
 
-	vertical-align: center;
-	font-weight: bold;
-	font-size: 45px;
-	margin-top: 10px;
+    vertical-align: center;
+    font-weight: bold;
+    font-size: 45px;
+    margin-top: 10px;
 
 
 }
@@ -88,9 +101,9 @@ margin-left: 15px;
       
   
  .navbar-btn{
- 	margin-top: 20px;
- 	position: absolute;
- 	right: 17px;
+    margin-top: 20px;
+    position: absolute;
+    right: 17px;
  }
 
  .navbar .divider-vertical {

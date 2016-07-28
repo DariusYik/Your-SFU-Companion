@@ -7,6 +7,7 @@ class LibraryController < ApplicationController
   
 helper_method :getLibOpenArray
 helper_method :getFreePCHash
+helper_method :getReservedBookResult
 
 require 'net/http'
 require 'ostruct'
@@ -51,40 +52,37 @@ require 'ostruct'
     end
    
    
-##########################################################################   
-###Code below is for Library detail API #####
-#location field is in Array but others(hours, ranges) are in hash so we need two different
-#methods to retrieve those info
-###
+    #take user input (search keyword)
+    def reserved_book
+        course_name = params[:course_name]
+        course_number = params[:course_number]
+        return course_name, course_number
+    end
 
-# #retrieve info stored in array []
-# #field ex:"locations"..
-# #key ex: "name"
-
-#     def getArray(field, key)
-#         returnArray = []
-#         obj = parse(getSummary)
-        
-#         for i in obj[field]
-#              returnArray.push(i[key])       
-#         end
-
-#         return returnArray
-#     end
-
-
-# #retrieve info stored in hash{}
-# #field ex:"locations"..
-# #key ex: "name"
-#     def getHash (field, key)
-#         obj = parse(getDetails)
-#         returnArray = []
-#         for i in 1..2
-#             returnArray.push(obj[field][i.to_s][key])
-#         end
-#         return returnArray
-#     end
-##########################################################################       
-
-  
+    # concatenate course name and number to the API url
+    def construct_search_URL
+        name, number = reserved_book
+        url = "http://api.lib.sfu.ca/reserves/search?department=" + name + "&number=" + number
+        return url
+    end
+    
+    # with concatenated url, retrieve results
+    # return array of Hashes
+    def getReservedBookResult
+        returnArray = []
+        obj = parse(getSummary(construct_search_URL))
+        for i in obj["reserves"]
+            returnHash = Hash.new
+            returnArray.push(returnHash)
+            returnHash["Course"] = i["course"]
+            returnHash["Instructors"] = i["instructors"]
+            returnHash["Title"] = i["title"]
+            returnHash["Author"] = i["author"]
+            returnHash["Cover_url"] = i["cover_url"]
+            returnHash["ISNS"] = i["isns"]
+            returnHash["Item_url"] = i["item_url"]
+        end
+        return returnArray
+    end
+    
 end
