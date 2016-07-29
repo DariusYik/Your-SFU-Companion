@@ -3,39 +3,34 @@ class CoursesController < ApplicationController
   layout false
   
  def index
-		@course = Course.all
+		
  end
 
-	def new
-		@course = current_user.courses.build
-	end
-
+	
 	def show
 	end
 
 	def create
-		@course = current_user.courses.build(course_params)
+	  @user = current_user
+    @course = @user.courses.create(course_params)
+   
+	  
+	  
+		#@course = current_user.courses.build(course_params)
 		if @course.save
-			redirect_to '/courses'
+			redirect_to '/'
 		else
 			render 'new'
 		end
 	end
 
-	def edit
-	end
-
-	def update
-		if @course.update(course_params)
-			redirect_to course_path
-		else
-			render 'edit'
-		end
-	end
-
 	def destroy
-		@course.destroy
-		redirect_to '/courses'
+    @user = User.find(params[:user_id])
+    @course = @user.comments.find(params[:id])
+    @course.destroy
+    redirect_to '/'
+    	
+    
 	end
 
 

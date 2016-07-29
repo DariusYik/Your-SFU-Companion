@@ -2,10 +2,12 @@
 <h3>Course Search  - more to be added!</h3>
 
 <h2>my courses</h2>
-<% @course.each do |course| %>
+<% current_user.courses.each do |course| %>
 	<%= course.c_name %>
 	<%= course.c_number %>
 	<%= course.c_section %>
+	<% #= link_to "Delete", [user.course, course], method: :delete, data: { confirm: "Are you sure?" } %>
+		
 	<br>
 <% end %>
 

@@ -15,10 +15,9 @@ Instructor:
     <%= examLocation = "#{details['Exam room']} #{details['ExamBuilding']} #{details['ExamCampus']}" %>
     
     
-<%= simple_form_for @course do |f| %>
+<%= simple_form_for ([current_user, current_user.courses.build]) do |f| %>
     <%= f.hidden_field :c_name, :value => details['name'] %>
     <%= f.hidden_field :c_number, :value => details['number'] %>
     <%= f.hidden_field :c_section, :value => details['section'] %>
-	
 	<%= f.button :submit, "Add this course in my course list!" %>
 <% end %>

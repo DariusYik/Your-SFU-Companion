@@ -12,9 +12,11 @@ Rails.application.routes.draw do
   get 'maps' => 'maps#index'
   
   get '/courses' => 'courses#index'
+  post 'courses' => 'courses#create'
   match '/course_search' => 'courses#course_search', :via => :post
   match '/new' => 'courses#new', :via => :post
   
+ 
   
   get 'library' => 'library#index'
   match '/reserved_book' => 'library#reserved_book', :via => :post
@@ -35,13 +37,14 @@ Rails.application.routes.draw do
   post 'login' => 'sessions#create'
   get 'logout' => 'sessions#destroy'
   resources :sessions
+  
   resources :messages do
   resources :comments
   resources :users
   end
   
-  resources :courses do 
-    resources :users
+  resources :users do
+    resources :courses
   end
   
 
