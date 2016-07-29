@@ -22,7 +22,7 @@
 	Exam:
 	<%= course.c_examTime %>
 	<%= course.c_examLocation %>
-	<% #= link_to "Delete", [user.course, course], method: :delete, data: { confirm: "Are you sure?" } %>
+	<%= button_to "Delete", [course.user, course], method: :delete, data: { confirm: "Are you sure?" } %>
 		
 	<br>
 	</td>

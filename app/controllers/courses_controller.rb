@@ -1,6 +1,6 @@
 class CoursesController < ApplicationController
   
-  layout false
+ layout false
   
  def index
 		
@@ -14,8 +14,6 @@ class CoursesController < ApplicationController
 	  @user = current_user
     @course = @user.courses.create(course_params)
    
-	  
-	  
 		#@course = current_user.courses.build(course_params)
 		if @course.save
 			redirect_to '/'
@@ -25,8 +23,8 @@ class CoursesController < ApplicationController
 	end
 
 	def destroy
-    @user = User.find(params[:user_id])
-    @course = @user.comments.find(params[:id])
+    @user = current_user
+    @course = @user.courses.find(params[:id])
     @course.destroy
     redirect_to '/'
     	
