@@ -1,27 +1,28 @@
-
+<% #get detail course info %>
 <% details = getCourseDetails %>
+
 <%= details['name']  %>
 <%=  details['number'] %>
 <%=  details['section'] %>
 <%= "( #{details['Lecture type']} )" %>
 <br>
 Instructor:
-    <%= instrInfo = "#{details['Instructor']} #{details['Email']}" %><br>
-    Schedule:
-    <%= time = "#{details['Start time']} - #{details['End time']} #{details['Days']}" %>
-    <%= location = "#{details['Building']} #{details['Room']} #{details['Campus']}" %><br>
-    Exam: 
-    <%= examTime = "#{details['Exam Start']} - #{details['Exam End']} #{details['Exam Date']}" %>
-    <%= examLocation = "#{details['Exam room']} #{details['ExamBuilding']} #{details['ExamCampus']}" %>
+<%= instrInfo = "#{details['Instructor']} #{details['Email']}" %><br>
+Schedule:
+<%= time = "#{details['Start time']} - #{details['End time']} #{details['Days']}" %>
+<%= location = "#{details['Building']} #{details['Room']} #{details['Campus']}" %><br>
+Exam: 
+<%= examTime = "#{details['Exam Start']} - #{details['Exam End']} #{details['Exam Date']}" %>
+<%= examLocation = "#{details['Exam room']} #{details['ExamBuilding']} #{details['ExamCampus']}" %>
     
-    
+<% #form.. add this course to Mycourse List %>    
 <%= simple_form_for ([current_user, current_user.courses.build]) do |f| %>
-    <%= f.hidden_field :c_name, :value => details['name'] %>
-    <%= f.hidden_field :c_number, :value => details['number'] %>
-    <%= f.hidden_field :c_section, :value => details['section'] %>
-    <%= f.hidden_field :c_time, :value => time %>
-    <%= f.hidden_field :c_location, :value => location %>
-    <%= f.hidden_field :c_examTime, :value => examTime %>
-    <%= f.hidden_field :c_examLocation, :value => examLocation %>
+  <%= f.hidden_field :c_name, :value => details['name'] %>
+  <%= f.hidden_field :c_number, :value => details['number'] %>
+  <%= f.hidden_field :c_section, :value => details['section'] %>
+  <%= f.hidden_field :c_time, :value => time %>
+  <%= f.hidden_field :c_location, :value => location %>
+  <%= f.hidden_field :c_examTime, :value => examTime %>
+  <%= f.hidden_field :c_examLocation, :value => examLocation %>
 	<%= f.button :submit, "Add this course in my course list!" %>
 <% end %>

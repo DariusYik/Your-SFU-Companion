@@ -1,53 +1,35 @@
-<h2>Course Search Results - course_search.html.erb file - more to be added!</h2>
-
+<% #Diaplays search results with course title, number,  and section %> 
+<h2>Course Search Results</h2>
 <% results = getCourseSearchResult %>
 <% courseParams = courseSearch %>
 
+<% #redirect to courses page when result is empty. %>
+<% #result is empty when user put invalid input/ no input %>
 <% if results.empty? %>
   <h3>Please Enter valid Entries. Redirecting...</h3>
-  <% #redirect to courses page %>
   <script type="text/javascript">
     window.setTimeout(function(){window.location.href="/courses"},3000)
   </script>
 <% end %>
 
+
 <% #display course title and section %>
 <table border= "solid">
-   
-<% results.each do |result| %>
-    
-
+  <% results.each do |result| %>
     <tr>
       <td>
-    <strong>
-    <%= result['Title'] %>
-    <%= result['Section'] %>
+        <strong> <%= result['Title'] %> <%= result['Section'] %> </strong>
     
-    </strong>
-    
-  
-<%= form_tag('/new', :method => 'post') do %>
-
-    <% #search by year, term, course name and number %>
-   
-    <%=hidden_field_tag 'course_year', courseParams[0]  %>
-    <br>
-  
-    <%=hidden_field_tag 'course_term', courseParams[1] %>
-    <br>
-   
-    <%=hidden_field_tag 'course_name', courseParams[2] %>
-    <br>
-   
-    <%=hidden_field_tag 'course_number', courseParams[3] %>
-    
-    <%=hidden_field_tag 'course_section', result['Section'] %>
-    
-    <div><%= submit_tag 'Details' %></div>
-<% end %>
-    
-    </td>
+        <% #pass course info to /new page to display details %>
+        <%= form_tag('/new', :method => 'post') do %>
+          <%=hidden_field_tag 'course_year', courseParams[0]  %>
+          <%=hidden_field_tag 'course_term', courseParams[1] %>
+          <%=hidden_field_tag 'course_name', courseParams[2] %>
+          <%=hidden_field_tag 'course_number', courseParams[3] %>
+          <%=hidden_field_tag 'course_section', result['Section'] %>
+          <div><%= submit_tag 'Details' %></div>
+        <% end %>
+      </td>
     </tr>
-  
-<% end %>
+  <% end %>
 </table>
