@@ -2,11 +2,19 @@
 <h3>Course Search  - more to be added!</h3>
 
 <h2>my courses</h2>
+
 <% current_user.courses.each do |course| %>
+<table border= "solid">
+    <tr>
+        <td>
 	<%= course.c_name %>
 	<%= course.c_number %>
 	<%= course.c_section %>
 	<br>
+	</td>
+	</tr>
+	<tr>
+	    <td>
 	Schedule:
 	<%= course.c_time %>
 	<%= course.c_location %>
@@ -17,6 +25,9 @@
 	<% #= link_to "Delete", [user.course, course], method: :delete, data: { confirm: "Are you sure?" } %>
 		
 	<br>
+	</td>
+	</tr>
+</table>
 <% end %>
 
 <%= form_tag('/course_search', :method => 'post') do %>
