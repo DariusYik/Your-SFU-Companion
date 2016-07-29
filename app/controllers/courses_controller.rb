@@ -2,12 +2,49 @@ class CoursesController < ApplicationController
   
   layout false
   
-  def index
-  end
-  
+ def index
+		@course = Course.all
+ end
+
+	def new
+		@course = current_user.courses.build
+	end
+
+	def show
+	end
+
+	def create
+		@course = current_user.courses.build(course_params)
+		if @course.save
+			redirect_to '/courses'
+		else
+			render 'new'
+		end
+	end
+
+	def edit
+	end
+
+	def update
+		if @course.update(course_params)
+			redirect_to course_path
+		else
+			render 'edit'
+		end
+	end
+
+	def destroy
+		@course.destroy
+		redirect_to '/courses'
+	end
+
+
+
 
 helper_method :getCourseSearchResult
 helper_method :getCourseDetails
+helper_method :courseSearch
+
 require 'net/http'
 require 'ostruct'
 
@@ -60,29 +97,34 @@ require 'ostruct'
   
   ######################## Display Course Details ####################
   ######################### hard coded- might need to refactor code later###
-    def courseSearchwithSection(section)
+    def courseSearchwithSection()
         course_year = params[:course_year]
         course_term = params[:course_term]
         course_name = params[:course_name]
         course_number = params[:course_number] 
-        
-        course_section = section
+        course_section = params[:course_section]
         return course_year, course_term, course_name, course_number, course_section
     end
 
     # concatenate course name and number to the API url
-    def construct_search_URL_withSection(section)
-        year, term, name, number, section = courseSearchwithSection(section)
+    def construct_search_URL_withSection
+        year, term, name, number, section = courseSearchwithSection
         url = "http://www.sfu.ca/bin/wcm/course-outlines?" + year + "/" + term + "/" + name + "/" + number + "/" + section
         return url
     end
     
     # with concatenated url, retrieve results
     # return array of Hashes
-    def getCourseDetails(section)
-        obj = parse(getSummary(construct_search_URL_withSection(section)))
+    def getCourseDetails
+        obj = parse(getSummary(construct_search_URL_withSection))
         returnHash = Hash.new
         
+        if obj.try(:info)
+          returnHash["name"] = obj["info"]["dept"] 
+          returnHash["number"] = obj["info"]["number"]
+          returnHash["section"] = obj["info"]["section"]
+        end
+            
         if obj.try(:instructor)
           returnHash["Instructor"] = obj["instructor"][0]["name"] 
           returnHash["Email"] = obj["instructor"][0]["email"]
@@ -98,6 +140,8 @@ require 'ostruct'
           returnHash["Lecture type"] = obj["courseSchedule"][0]["sectionCode"]
           returnHash["Building"] = obj["courseSchedule"][0]["buildingCode"]
           returnHash["Campus"] = obj["courseSchedule"][0]["campus"]
+        else
+          returnHash["courseSchedule"] = "TBA"
         end
         
         if obj.try(:examSchedule)
@@ -107,9 +151,16 @@ require 'ostruct'
           returnHash["Exam End"] = obj["examSchedule"][0]["endTime"]
           returnHash["ExamBuilding"] = obj["examSchedule"][0]["buildingCode"]
           returnHash["ExamCampus"] = obj["examSchedule"][0]["campus"]
+        else
+          returnHash["examSchedule"] = "TBA"
         end
         
         return returnHash
     end  
   
+private
+    def course_params
+      params.require(:course).permit(:c_name, :c_number, :c_section)
+    end
+    
 end

@@ -13,6 +13,8 @@ Rails.application.routes.draw do
   
   get '/courses' => 'courses#index'
   match '/course_search' => 'courses#course_search', :via => :post
+  match '/new' => 'courses#new', :via => :post
+  
   
   get 'library' => 'library#index'
   match '/reserved_book' => 'library#reserved_book', :via => :post
@@ -37,6 +39,11 @@ Rails.application.routes.draw do
   resources :comments
   resources :users
   end
+  
+  resources :courses do 
+    resources :users
+  end
+  
 
   get 'transit/index'
   resources :transit

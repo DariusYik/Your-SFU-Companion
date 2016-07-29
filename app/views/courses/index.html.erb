@@ -1,5 +1,14 @@
 
 <h3>Course Search  - more to be added!</h3>
+
+<h2>my courses</h2>
+<% @course.each do |course| %>
+	<%= course.c_name %>
+	<%= course.c_number %>
+	<%= course.c_section %>
+	<br>
+<% end %>
+
 <%= form_tag('/course_search', :method => 'post') do %>
 
     <% #search by year, term, course name and number %>
@@ -14,7 +23,6 @@
     <br>
     <label for="course_number">Course Number</label>
     <%=text_field_tag 'course_number', '276'%>
-    
     
     <div><%= submit_tag 'Search' %></div>
 <% end %>
