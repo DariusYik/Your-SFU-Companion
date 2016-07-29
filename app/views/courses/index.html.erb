@@ -6,6 +6,14 @@
 	<%= course.c_name %>
 	<%= course.c_number %>
 	<%= course.c_section %>
+	<br>
+	Schedule:
+	<%= course.c_time %>
+	<%= course.c_location %>
+	<br>
+	Exam:
+	<%= course.c_examTime %>
+	<%= course.c_examLocation %>
 	<% #= link_to "Delete", [user.course, course], method: :delete, data: { confirm: "Are you sure?" } %>
 		
 	<br>

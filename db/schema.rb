@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160728225042) do
+ActiveRecord::Schema.define(version: 20160729054645) do
 
   create_table "comments", force: :cascade do |t|
     t.text     "content"
@@ -29,6 +29,10 @@ ActiveRecord::Schema.define(version: 20160728225042) do
     t.integer "c_number"
     t.string  "c_section"
     t.integer "user_id"
+    t.string  "c_time"
+    t.string  "c_location"
+    t.string  "c_examTime"
+    t.string  "c_examLocation"
   end
 
   add_index "courses", ["user_id"], name: "index_courses_on_user_id"

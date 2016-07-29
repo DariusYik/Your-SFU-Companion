@@ -155,7 +155,7 @@ require 'ostruct'
   
 private
     def course_params
-      params.require(:course).permit(:c_name, :c_number, :c_section)
+      params.require(:course).permit(:c_name, :c_number, :c_section, :c_time, :c_location, :c_examTime, :c_examLocation)
     end
     
 end
