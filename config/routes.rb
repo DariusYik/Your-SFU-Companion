@@ -53,7 +53,7 @@ Rails.application.routes.draw do
   get 'transit/index'
   resources :transit
 
-  get '/calendar/index' => 'calendar#index'
+  get '/calendar' => 'calendar#index'
   resources :calendar
 
   # Api definition
