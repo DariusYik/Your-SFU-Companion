@@ -1,7 +1,7 @@
 class CoursesController < ApplicationController
   
   layout false
-  
+  before_action :require_user
   
   helper_method :getCourseSearchResult
   helper_method :getCourseDetails

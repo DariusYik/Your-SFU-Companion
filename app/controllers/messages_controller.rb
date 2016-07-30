@@ -1,5 +1,6 @@
 class MessagesController < ApplicationController
 	layout "shoutout"
+	before_action :require_user
 	before_action :find_message, only: [:show, :edit, :update, :destroy]
 
 
