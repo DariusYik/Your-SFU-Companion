@@ -1,6 +1,11 @@
 <% #get detail course info %>
 <% details = getCourseDetails %>
 
+<br><br>
+
+<h3 style="margin-left:auto;margin-right:auto; width:65%;"><span class="glyphicon glyphicon-list" aria-hidden="true"></span> Course Search Results </h3>
+<div class ="well well-lg" style ="width:65%;margin-left:auto;margin-right:auto;">
+
 <%= details['name']  %>
 <%=  details['number'] %>
 <%=  details['section'] %>
@@ -24,5 +29,7 @@ Exam:
   <%= f.hidden_field :c_location, :value => location %>
   <%= f.hidden_field :c_examTime, :value => examTime %>
   <%= f.hidden_field :c_examLocation, :value => examLocation %>
-	<%= f.button :submit, "Add this course in my course list!" %>
+	<%= f.button :submit, "Add this course in my course list!" , id: "coursesearchdetails" %>
 <% end %>
+
+</div>
