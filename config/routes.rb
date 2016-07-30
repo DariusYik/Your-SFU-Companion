@@ -55,6 +55,8 @@ Rails.application.routes.draw do
   get 'transit/index'
   resources :transit
 
+  get 'calendar/home'
+
   # Api definition
   namespace :api, defaults: { format: :json }, constraints: { subdomain: 'api' }, path: '/'  do
     # We are going to list our resources here
