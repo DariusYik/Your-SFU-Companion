@@ -13,10 +13,10 @@ Rails.application.routes.draw do
   
   get '/courses' => 'courses#index'
   get '/course_search', to: redirect('/courses')
-  get '/new', to: redirect('/courses')
+  get '/courses/new', to: redirect('/courses')
   post 'courses' => 'courses#create'
   match '/course_search' => 'courses#course_search', :via => :post
-  match '/new' => 'courses#new', :via => :post
+  match '/courses/new' => 'courses#new', :via => :post
   
  
  
