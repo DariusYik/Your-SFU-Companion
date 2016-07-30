@@ -25,6 +25,7 @@ Rails.application.config.assets.precompile += %w( admin.js )
 Rails.application.config.assets.precompile += %w( maps.css.scss )
 Rails.application.config.assets.precompile += %w( transit.css.scss )
 Rails.application.config.assets.precompile += %w( courses.css.scss )
+Rails.application.config.assets.precompile += %w( courses.css )
 
 
 
