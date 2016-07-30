@@ -1,6 +1,6 @@
 class CoursesController < ApplicationController
   
-  layout false
+  layout 'courses'
   
   
   helper_method :getCourseSearchResult
