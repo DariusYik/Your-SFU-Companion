@@ -1,24 +1,46 @@
-<h2>Course Search</h2>
 
-<% #course search form %>
-<% #post params to /course_search %>
-<%= form_tag('/course_search', :method => 'post') do %>
 
-    <% #search by year, term, course name and number %>
-    <label for="course_year">Course Year</label>
-    <%=text_field_tag 'course_year', '2016' %>
-    <br>
-    <label for="course_term">Course Term</label>
-    <%=text_field_tag 'course_term', 'Fall' %>
-    <br>
-    <label for="course_name">Course Name</label>
-    <%=text_field_tag 'course_name', 'CMPT' %>
-    <br>
-    <label for="course_number">Course Number</label>
-    <%=text_field_tag 'course_number', '276'%>
-    
-    <div><%= submit_tag 'Search' %></div>
-<% end %>
+<!--Side search container-->
+<div class="container">
+	<div class="row">
+  			<div class="col-md-3">
+              	
+				<div class="well"> 
+					<h3>Course Search</h3><br>
+				<% #course search form %>
+				<% #post params to /course_search %>
+				<%= form_tag('/course_search', :method => 'post') do %>
+				
+				    <% #search by year, term, course name and number %>
+				    <label for="course_year">Course Year</label>
+				    <%=text_field_tag 'course_year', '2016', id: "courseyear" %>
+				    <br>
+				    <label for="course_term">Course Term</label>
+				    <%=text_field_tag 'course_term', 'Fall', id: "courseterm" %>
+				    <br>
+				    <label for="course_name">Course Name</label>
+				    <%=text_field_tag 'course_name', 'CMPT', id: "coursename" %>
+				    <br>
+				    <label for="course_number">Course Number</label>
+				    <%=text_field_tag 'course_number', '276', id: "coursenumber"%>
+				    
+				    <div><%= submit_tag 'Search', id: "coursesearch" %></div>
+				<% end %>	
+				<br>				
+     
+  				</div>
+
+      		</div>  
+      		<div class="col-md-9">
+              	<h2 id="sec0">Content</h2>
+              </div>
+          </div>
+      </div>
+
+
+
+
+
 
 
 <% #course can be added into my course list %>
