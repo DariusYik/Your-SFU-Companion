@@ -21,7 +21,7 @@
         <strong> <%= result['Title'] %> <%= result['Section'] %> </strong>
     
         <% #pass course info to /new page to display details %>
-        <%= form_tag('/new', :method => 'post') do %>
+        <%= form_tag('/courses/new', :method => 'post') do %>
           <%=hidden_field_tag 'course_year', courseParams[0]  %>
           <%=hidden_field_tag 'course_term', courseParams[1] %>
           <%=hidden_field_tag 'course_name', courseParams[2] %>

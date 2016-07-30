@@ -1,7 +1,11 @@
 class CoursesController < ApplicationController
   
+
   layout 'courses'
   
+
+  before_action :require_user
+
   
   helper_method :getCourseSearchResult
   helper_method :getCourseDetails
@@ -14,6 +18,7 @@ class CoursesController < ApplicationController
   end
 
 	
+  
   def show
   end
 
