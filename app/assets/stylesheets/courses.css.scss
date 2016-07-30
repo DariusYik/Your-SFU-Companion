@@ -1,6 +1,6 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
-
+@import "animate";
 
 
 .navbar {
@@ -96,4 +96,13 @@
  	color: white;
  	font-weight: bold;
  	border-radius: 4px;
+ }
+
+ #coursesearchdetails{
+ 	 	background-color: #5189fb;
+ 	padding: 5px 15px;
+ 	color: white;
+ 	margin-top: 10px;
+ 	border-radius: 4px;
+ 	border: none;
  }
