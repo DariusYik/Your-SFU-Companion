@@ -60,3 +60,6 @@ group :production do
 	gem 'pg'
 	gem 'rails_12factor'
 end
+
+#google calendar
+gem 'google-api-client', '~> 0.9', require: 'google/apis/calendar_v3'
