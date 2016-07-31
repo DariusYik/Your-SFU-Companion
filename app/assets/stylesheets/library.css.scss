@@ -6,7 +6,7 @@
 
 @import "bootstrap-sprockets";
 @import "bootstrap";
-
+@import "animate";
 
 #sidesectable{
 margin-left: 15px;
@@ -113,6 +113,18 @@ margin-left: 15px;
     border-left: 1px solid #f2f2f2;
 }
 
+#footer{
+    
+    
+    
+    width: 80%;
+   position: absolute;
+    bottom: 3px;
+    text-align: center;
+    
+    margin-left: 10%;
+
+}
 
 @media (max-width: 767px) {
     .navbar-collapse .nav > .divider-vertical {
