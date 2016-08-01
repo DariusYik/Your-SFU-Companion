@@ -1,7 +1,8 @@
 class CalendarController < ApplicationController
 
 	layout false
-
+	before_action :require_user
+	
   	def index
   	end
 
