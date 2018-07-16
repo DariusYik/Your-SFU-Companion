@@ -14,7 +14,9 @@ Providing SFU’s many resources organized by modules into one location with the
 
 4. **Library Module:** This feature will allow people who visit the web app to get information about the SFU library. Using the SFU library API, users will get info on library hours, book searches, equipment searches, and computer workstation availability searches.
 
-5. **Friends/Groups Module:** People who have a user account will be able to add or remove other users from their friends list. This will allow people to view or share their schedules with each other and send messages to each other. There will also be a group module where you can invite multiple friends to events through an event planner or create polls to make to decisions.
+5. **Friends/Groups Module:** Registered users can add or remove other users from their friends list. Users can view their schedules, share them with the others , or send messages to their friends. Group module allows users to invite friends to events through an event planner or create polls to make to decisions.
+
+ 
 
 6. **Transit Module:** Users will be able to lookup the bus schedule for SFU burnaby buses and also have information about the road conditions using the SFU Road Report API.
 
