@@ -6,7 +6,7 @@ Website: https://sfucompanion.herokuapp.com/
 Providing SFU’s many resources organized by modules into one location with the added features of group chats, event organizers, polls and sharing access to your social media. Very similar to the SFU phone app, but on a web platform instead. This is more advantageous as SFU’s many course resources are all web-based modules not optimized for phone use. Therefore, by having it all localized into one webpage with some extra features listed below, it will maximize functionality and productivity as many university students do homework on a computer rather than a phone.
 
 ###Modules and Features:
-1. **Login Module:** When you first visit the webpage, there’ll be a welcome page giving a short description or slogan of the web app. There will be a log in or sign up button shown with the welcome page, but you can also choose to visit the website as a guest. Some features do not require a user account, such as viewing the map, searching through courses or library, etc while others do, such as adding friends, sharing to social media, etc.
+1. **Login Module:** When you first visit the webpage, there’ll be a welcome page giving a short description or slogan of the web app. You can log in to your account, sign up for a new account, or visit the website as a guest. Some features such as viewing the map, searching through courses or library do not require a user account, while the others such as adding friends and sharing to social media do.
 
 2. **Shoutouts Module** Registered users will be able to post messages that other users can view and reply to. Shoutouts are a way to convey/enquire relevant information regarding SFU's course works, academic schedules, dates, events and so on. Shoutouts can also be used to have converstaions or help find someone to study with etc.
 
@@ -14,7 +14,9 @@ Providing SFU’s many resources organized by modules into one location with the
 
 4. **Library Module:** This feature will allow people who visit the web app to get information about the SFU library. Using the SFU library API, users will get info on library hours, book searches, equipment searches, and computer workstation availability searches.
 
-5. **Friends/Groups Module:** People who have a user account will be able to add or remove other users from their friends list. This will allow people to view or share their schedules with each other and send messages to each other. There will also be a group module where you can invite multiple friends to events through an event planner or create polls to make to decisions.
+5. **Friends/Groups Module:** Registered users can add or remove other users from their friends list. Users can view their schedules, share them with the others , or send messages to their friends. Group module allows users to invite friends to events through an event planner or create polls to make to decisions.
+
+ 
 
 6. **Transit Module:** Users will be able to lookup the bus schedule for SFU burnaby buses and also have information about the road conditions using the SFU Road Report API.
 
