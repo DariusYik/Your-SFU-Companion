@@ -3,8 +3,7 @@
 Website: https://sfucompanion.herokuapp.com/
 
 ## Description:
-Providing SFU’s many resources organized by modules into one location with the added features of group chats, event organizers, polls and sharing access to your social media. Very similar to the SFU phone app, but on a web platform instead. This is more advantageous as SFU’s many course resources are all web-based modules not optimized for phone use. Therefore, by having it all localized into one webpage with some extra features listed below, it will maximize functionality and productivity as many university students do homework on a computer rather than a phone.
-
+This project provides SFU’s resources in one location. This project add group chat, event organizers, polls and share access to the social media. It is similar to SFU phone APP and runs on the web platform. Web platform is advantageous as most SFU’s resources are web-based modules. The project will maximize functionality and productivity for students who work on computers.
 
 ## Modules and Features:
 1. **Login Module:** When you first visit the webpage, there’ll be a welcome page giving a short description or slogan of the web app. There will be a log in or sign up button shown with the welcome page, but you can also choose to visit the website as a guest. Some features do not require a user account, such as viewing the map, searching through courses or library, etc while others do, such as adding friends, sharing to social media, etc.
